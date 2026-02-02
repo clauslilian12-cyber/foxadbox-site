@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Chrome, ArrowRight } from 'lucide-react'
+import VideoPlayer from '@/components/ui/VideoPlayer'
 
 export default function Hero() {
   return (
@@ -70,21 +71,20 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Hero Mockup Placeholder */}
+          {/* Hero Video Demo */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 relative"
+            className="mt-16 relative max-w-4xl mx-auto"
           >
-            <div className="bg-dark-200 border border-dark-400 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto">
-              <div className="aspect-video bg-dark-300 rounded-xl flex items-center justify-center border border-dark-400">
-                <div className="text-center">
-                  <span className="text-6xl mb-4 block">🦊</span>
-                  <p className="text-gray-500">Mockup / Capture d'ecran de l'extension</p>
-                </div>
-              </div>
-            </div>
+            <VideoPlayer
+              videoSrc="/videos/hero-demo.mp4"
+              thumbnailSrc="/thumbnails/hero-thumb.jpg"
+              alt="Demo FoxAdBox - Extension Chrome"
+              loop={true}
+              className="border border-dark-400"
+            />
             {/* Glow effect */}
             <div className="absolute inset-0 bg-accent/5 rounded-2xl blur-3xl -z-10" />
           </motion.div>

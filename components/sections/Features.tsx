@@ -14,7 +14,8 @@ export default function Features() {
         'Analyse complète du hook visuel',
         'Décryptage du message publicitaire',
       ],
-      imageSrc: '',
+      videoSrc: '/videos/studio-photo.mp4',
+      thumbnailSrc: '/thumbnails/studio-photo-thumb.jpg',
       imageAlt: 'Studio Photo - Capture et analyse de publicités',
       highlighted: false,
     },
@@ -28,7 +29,8 @@ export default function Features() {
         'Génération automatique du script complet',
         'Détection des techniques de persuasion',
       ],
-      imageSrc: '',
+      videoSrc: '/videos/studio-upload.mp4',
+      thumbnailSrc: '/thumbnails/studio-upload-thumb.jpg',
       imageAlt: 'Studio Upload - Import et analyse de fichiers',
       highlighted: false,
     },
@@ -42,7 +44,8 @@ export default function Features() {
         'Historique détaillé de chaque analyse sauvegardée',
         'Export vers Notion en un clic',
       ],
-      imageSrc: '',
+      videoSrc: '/videos/studio-library.mp4',
+      thumbnailSrc: '/thumbnails/studio-library-thumb.jpg',
       imageAlt: 'Studio Bibliothèque - Organisation de votre swipe file',
       highlighted: false,
     },
@@ -56,7 +59,8 @@ export default function Features() {
         '5 variations publicitaires générées automatiquement',
         'Propositions d\'angles marketing différenciants',
       ],
-      imageSrc: '',
+      videoSrc: '/videos/spy-mode.mp4',
+      thumbnailSrc: '/thumbnails/spy-mode-thumb.jpg',
       imageAlt: 'Studio Spy Mode - Adaptation de publicités',
       highlighted: true,
     },
@@ -70,7 +74,8 @@ export default function Features() {
         'Interface intuitive pour une veille rapide et efficace',
         'Synchronisation automatique avec Notion',
       ],
-      imageSrc: '',
+      videoSrc: '/videos/ad-tracker.mp4',
+      thumbnailSrc: '/thumbnails/ad-tracker-thumb.jpg',
       imageAlt: 'Studio Ad Tracker - Surveillance concurrentielle',
       highlighted: false,
     },
@@ -102,7 +107,8 @@ export default function Features() {
               title={feature.title}
               description={feature.description}
               points={feature.points}
-              imageSrc={feature.imageSrc}
+              videoSrc={feature.videoSrc}
+              thumbnailSrc={feature.thumbnailSrc}
               imageAlt={feature.imageAlt}
               reverse={index % 2 === 1}
               highlighted={feature.highlighted}

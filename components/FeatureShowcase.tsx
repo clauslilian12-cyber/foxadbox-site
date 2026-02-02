@@ -1,12 +1,16 @@
 'use client'
 
+import VideoPlayer from '@/components/ui/VideoPlayer'
+
 interface FeatureShowcaseProps {
   badge: string
   title: string
-  description: string
+  description?: string
   points: string[]
-  imageSrc: string
+  imageSrc?: string
   imageAlt: string
+  videoSrc?: string
+  thumbnailSrc?: string
   reverse?: boolean
   highlighted?: boolean
 }
@@ -14,10 +18,11 @@ interface FeatureShowcaseProps {
 export default function FeatureShowcase({
   badge,
   title,
-  description,
   points,
   imageSrc,
   imageAlt,
+  videoSrc,
+  thumbnailSrc,
   reverse = false,
   highlighted = false,
 }: FeatureShowcaseProps) {
@@ -62,27 +67,42 @@ export default function FeatureShowcase({
         </ul>
       </div>
 
-      {/* Image */}
+      {/* Video/Image */}
       <div className={`relative ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
-        <div className={`relative rounded-2xl overflow-hidden border ${
-          highlighted ? 'border-accent/30 shadow-lg shadow-accent/10' : 'border-dark-400'
+        <div className={`relative overflow-hidden ${
+          highlighted ? 'shadow-lg shadow-accent/10' : ''
         }`}>
-          {/* Placeholder gradient background for missing images */}
-          <div className="aspect-[4/3] bg-gradient-to-br from-dark-300 via-dark-400 to-dark-300 flex items-center justify-center">
-            {imageSrc ? (
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                className="w-full h-full object-cover"
-              />
-            ) : (
+          {videoSrc ? (
+            <VideoPlayer
+              videoSrc={videoSrc}
+              thumbnailSrc={thumbnailSrc || ''}
+              alt={imageAlt}
+              loop={true}
+              className={`border ${highlighted ? 'border-accent/30' : 'border-dark-400'}`}
+            />
+          ) : imageSrc ? (
+            <div className={`rounded-2xl overflow-hidden border ${
+              highlighted ? 'border-accent/30' : 'border-dark-400'
+            }`}>
+              <div className="aspect-[4/3]">
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br from-dark-300 via-dark-400 to-dark-300 flex items-center justify-center border ${
+              highlighted ? 'border-accent/30' : 'border-dark-400'
+            }`}>
               <div className="text-center p-8">
-                <div className="text-6xl mb-4 opacity-50">🖼️</div>
-                <p className="text-gray-500 text-sm">Screenshot de l'extension</p>
+                <div className="text-6xl mb-4 opacity-50">🦊</div>
+                <p className="text-gray-500 text-sm">Video a venir</p>
                 <p className="text-gray-600 text-xs mt-1">{imageAlt}</p>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Decorative glow effect for highlighted items */}

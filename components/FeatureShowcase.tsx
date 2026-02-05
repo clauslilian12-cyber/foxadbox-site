@@ -1,6 +1,6 @@
 'use client'
 
-import VideoPlayer from '@/components/ui/VideoPlayer'
+import { ImageIcon } from 'lucide-react'
 
 interface FeatureShowcaseProps {
   badge: string
@@ -9,8 +9,6 @@ interface FeatureShowcaseProps {
   points: string[]
   imageSrc?: string
   imageAlt: string
-  videoSrc?: string
-  thumbnailSrc?: string
   reverse?: boolean
   highlighted?: boolean
 }
@@ -21,8 +19,6 @@ export default function FeatureShowcase({
   points,
   imageSrc,
   imageAlt,
-  videoSrc,
-  thumbnailSrc,
   reverse = false,
   highlighted = false,
 }: FeatureShowcaseProps) {
@@ -67,24 +63,16 @@ export default function FeatureShowcase({
         </ul>
       </div>
 
-      {/* Video/Image */}
+      {/* Image Placeholder */}
       <div className={`relative ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
         <div className={`relative overflow-hidden ${
           highlighted ? 'shadow-lg shadow-accent/10' : ''
         }`}>
-          {videoSrc ? (
-            <VideoPlayer
-              videoSrc={videoSrc}
-              thumbnailSrc={thumbnailSrc || ''}
-              alt={imageAlt}
-              loop={true}
-              className={`border ${highlighted ? 'border-accent/30' : 'border-dark-400'}`}
-            />
-          ) : imageSrc ? (
+          {imageSrc ? (
             <div className={`rounded-2xl overflow-hidden border ${
               highlighted ? 'border-accent/30' : 'border-dark-400'
             }`}>
-              <div className="aspect-[4/3]">
+              <div className="aspect-video">
                 <img
                   src={imageSrc}
                   alt={imageAlt}
@@ -93,14 +81,17 @@ export default function FeatureShowcase({
               </div>
             </div>
           ) : (
-            <div className={`aspect-[4/3] rounded-2xl bg-gradient-to-br from-dark-300 via-dark-400 to-dark-300 flex items-center justify-center border ${
-              highlighted ? 'border-accent/30' : 'border-dark-400'
+            <div className={`aspect-video rounded-2xl bg-gradient-to-br from-dark-200 via-dark-300 to-dark-200 flex flex-col items-center justify-center border-2 border-dashed ${
+              highlighted ? 'border-accent/40' : 'border-dark-400'
             }`}>
-              <div className="text-center p-8">
-                <div className="text-6xl mb-4 opacity-50">🦊</div>
-                <p className="text-gray-500 text-sm">Video a venir</p>
-                <p className="text-gray-600 text-xs mt-1">{imageAlt}</p>
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+                highlighted ? 'bg-accent/10' : 'bg-dark-400/50'
+              }`}>
+                <ImageIcon className={`w-8 h-8 ${highlighted ? 'text-accent/60' : 'text-gray-500'}`} />
               </div>
+              <p className={`text-sm font-medium ${highlighted ? 'text-accent/80' : 'text-gray-400'}`}>
+                Coming soon
+              </p>
             </div>
           )}
         </div>

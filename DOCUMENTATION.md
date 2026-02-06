@@ -2,7 +2,7 @@
 
 > **Dernière mise à jour :** Janvier 2025
 > **Version :** 1.0.0
-> **Auteur :** TheDivisionCorp
+> **Auteur :** FoxAdBox
 
 ---
 
@@ -97,7 +97,7 @@ foxadbox-landing/
   - Liens Produit (Features, Pricing)
   - Liens Ressources (Guide, Support)
   - Liens Légal (Privacy, Terms)
-  - Copyright "© 2025 FoxAdBox — Made with 🦊 by TheDivisionCorp"
+  - Copyright "© 2025 FoxAdBox. Tous droits reserves."
 - **Props :** Aucune
 
 ---

@@ -142,4 +142,4 @@ npm run lint     # Linting ESLint
 
 ## Licence
 
-Propriétaire - TheDivisionCorp © 2025
+Proprietaire - FoxAdBox © 2025

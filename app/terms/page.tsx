@@ -84,8 +84,8 @@ export default function TermsPage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-white">6. Propriété intellectuelle</h2>
               <p className="text-gray-400">
-                FoxAdBox et tout son contenu, fonctionnalités et fonctionnalités sont la propriété exclusive
-                de TheDivisionCorp et sont protégés par les lois sur la propriété intellectuelle.
+                FoxAdBox et tout son contenu, fonctionnalites et fonctionnalites sont la propriete exclusive
+                de FoxAdBox et sont proteges par les lois sur la propriete intellectuelle.
               </p>
             </section>
 

@@ -13,6 +13,7 @@ export default function Features() {
         'Analyse complète du hook visuel',
         'Décryptage du message publicitaire',
       ],
+      imageSrc: '/images/studio-photo.jpg',
       imageAlt: 'Studio Photo - Capture et analyse de publicités',
       highlighted: false,
     },
@@ -25,6 +26,7 @@ export default function Features() {
         'Génération automatique du script complet',
         'Détection des techniques de persuasion',
       ],
+      imageSrc: '/images/studio-upload.jpg',
       imageAlt: 'Studio Upload - Import et analyse de fichiers',
       highlighted: false,
     },
@@ -37,6 +39,7 @@ export default function Features() {
         'Historique détaillé de chaque analyse sauvegardée',
         'Export vers Notion en un clic',
       ],
+      imageSrc: '/images/studio-library.jpg',
       imageAlt: 'Studio Bibliothèque - Organisation de votre swipe file',
       highlighted: false,
     },
@@ -49,6 +52,7 @@ export default function Features() {
         '5 variations publicitaires générées automatiquement',
         'Propositions d\'angles marketing différenciants',
       ],
+      imageSrc: '/images/spy-mode.jpg',
       imageAlt: 'Studio Spy Mode - Adaptation de publicités',
       highlighted: true,
     },
@@ -61,6 +65,7 @@ export default function Features() {
         'Interface intuitive pour une veille rapide et efficace',
         'Synchronisation automatique avec Notion',
       ],
+      imageSrc: '/images/ad-tracker.jpg',
       imageAlt: 'Studio Ad Tracker - Surveillance concurrentielle',
       highlighted: false,
     },
@@ -91,6 +96,7 @@ export default function Features() {
               badge={feature.badge}
               title={feature.title}
               points={feature.points}
+              imageSrc={feature.imageSrc}
               imageAlt={feature.imageAlt}
               reverse={index % 2 === 1}
               highlighted={feature.highlighted}

@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-dark-400">
           <p className="text-center text-gray-600 text-sm">
-            © 2025 FoxAdBox — Made with 🦊 by TheDivisionCorp
+            © 2025 FoxAdBox. Tous droits reserves.
           </p>
         </div>
       </div>

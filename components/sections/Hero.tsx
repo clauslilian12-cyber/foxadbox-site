@@ -77,14 +77,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-16 relative max-w-4xl mx-auto"
           >
-            <div className="rounded-2xl overflow-hidden border border-dark-400 shadow-2xl">
+            <div className="rounded-2xl overflow-hidden border border-dark-400 shadow-2xl bg-dark-300">
               <video
                 src="/videos/hero-demo.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full aspect-video object-cover"
+                className="w-full object-contain"
               />
             </div>
             {/* Glow effect */}

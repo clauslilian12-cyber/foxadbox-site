@@ -5,7 +5,7 @@ import {
   SocialProof,
   BeforeAfter,
   Features,
-  NotionSection,
+
   Testimonials,
   Pricing,
   FAQSection,
@@ -21,7 +21,7 @@ export default function Home() {
         <SocialProof />
         <BeforeAfter />
         <Features />
-        <NotionSection />
+
         <Testimonials />
         <Pricing />
         <FAQSection />

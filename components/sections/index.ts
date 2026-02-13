@@ -3,7 +3,7 @@ export { default as SocialProof } from './SocialProof'
 export { default as BeforeAfter } from './BeforeAfter'
 export { default as Features } from './Features'
 export { default as VideoDemo } from './VideoDemo'
-export { default as NotionSection } from './NotionSection'
+
 export { default as Testimonials } from './Testimonials'
 export { default as Pricing } from './Pricing'
 export { default as FAQSection } from './FAQSection'

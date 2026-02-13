@@ -62,30 +62,35 @@ export default function PricingCard({
       <div className="text-center mb-6">
         <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
         <div className="flex flex-col items-center justify-center">
-          {oldPrice && (
-            <span
-              className="transition-all duration-300"
-              style={{
-                textDecoration: 'line-through',
-                color: '#9ca3af',
-                fontSize: '14px',
-              }}
-            >
-              {oldPrice}
-            </span>
-          )}
-          <div className="flex items-baseline justify-center gap-1 transition-all duration-300">
-            <span className="text-4xl font-bold text-white">{price}</span>
+          <span
+            className="transition-opacity duration-300"
+            style={{
+              textDecoration: 'line-through',
+              color: '#9ca3af',
+              fontSize: '14px',
+              opacity: oldPrice ? 1 : 0,
+              lineHeight: '20px',
+              minHeight: '20px',
+            }}
+          >
+            {oldPrice || '\u00A0'}
+          </span>
+          <div className="flex items-baseline justify-center gap-1">
+            <span className="text-4xl font-bold text-white transition-all duration-300">{price}</span>
             <span className="text-gray-500">/mois</span>
           </div>
-          {billedText && (
-            <span
-              className="mt-1 transition-all duration-300"
-              style={{ color: '#9ca3af', fontSize: '13px' }}
-            >
-              {billedText}
-            </span>
-          )}
+          <span
+            className="mt-1 transition-opacity duration-300"
+            style={{
+              color: '#9ca3af',
+              fontSize: '13px',
+              opacity: billedText ? 1 : 0,
+              lineHeight: '20px',
+              minHeight: '20px',
+            }}
+          >
+            {billedText || '\u00A0'}
+          </span>
         </div>
       </div>
 

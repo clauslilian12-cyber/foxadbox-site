@@ -91,21 +91,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 max-w-6xl mx-auto items-start">
-          {/* Free */}
-          <PricingCard
-            name="FREE"
-            price="0€"
-            features={[
-              '5 analyses photo',
-              '3 analyses video',
-              '2 prompts Midjourney',
-              '1 script video',
-            ]}
-            cta="Commencer gratuitement"
-            ctaLink={CHROME_STORE_URL}
-          />
-
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-start">
           {/* Starter */}
           <PricingCard
             name="STARTER"

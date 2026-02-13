@@ -97,7 +97,7 @@ export default function Pricing() {
             name="STARTER"
             price={isAnnual ? '9.99€' : '12.99€'}
             oldPrice={isAnnual ? '12.99€' : undefined}
-            billedText={isAnnual ? 'Facturé 119.88€/an' : undefined}
+            billedText={undefined}
             showDiscount={isAnnual}
             features={[
               '150 analyses photo',
@@ -114,7 +114,7 @@ export default function Pricing() {
             name="PRO"
             price={isAnnual ? '39.99€' : '49.99€'}
             oldPrice={isAnnual ? '49.99€' : undefined}
-            billedText={isAnnual ? 'Facturé 479.88€/an' : undefined}
+            billedText={undefined}
             showDiscount={isAnnual}
             features={[
               '450 analyses photo',
@@ -133,7 +133,7 @@ export default function Pricing() {
             name="AGENCY"
             price={isAnnual ? '99.99€' : '119.99€'}
             oldPrice={isAnnual ? '119.99€' : undefined}
-            billedText={isAnnual ? 'Facturé 1199.88€/an' : undefined}
+            billedText={undefined}
             showDiscount={isAnnual}
             features={[
               '900 analyses photo',

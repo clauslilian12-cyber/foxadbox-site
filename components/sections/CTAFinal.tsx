@@ -25,7 +25,9 @@ export default function CTAFinal() {
 
             {/* CTA Button */}
             <a
-              href="#"
+              href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-base px-10 py-4 gap-2 mb-8 animate-glow"
             >
               <Chrome size={20} />

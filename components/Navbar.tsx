@@ -54,7 +54,9 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="#"
+              href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary gap-2"
             >
               <Chrome size={18} />
@@ -86,7 +88,9 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#"
+                href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary gap-2 mt-2"
               >
                 <Chrome size={18} />

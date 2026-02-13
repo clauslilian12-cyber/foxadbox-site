@@ -47,16 +47,18 @@ export default function PricingCard({ name, price, features, cta, popular = fals
         ))}
       </ul>
 
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
+      <a
+        href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 text-center block ${
           popular
             ? 'bg-accent text-dark hover:bg-accent-400 hover:scale-105'
             : 'bg-dark-400 text-white hover:bg-dark-500 border border-dark-500'
         }`}
       >
         {cta}
-      </button>
+      </a>
     </div>
   )
 }

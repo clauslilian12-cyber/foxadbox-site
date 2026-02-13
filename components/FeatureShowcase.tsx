@@ -42,12 +42,14 @@ export default function FeatureShowcase({
 
         {/* CTA Button */}
         <div className="flex flex-wrap gap-4">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          <a
+            href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
           >
             Essai Gratuit
-          </button>
+          </a>
         </div>
 
         {/* Points */}

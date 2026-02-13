@@ -55,7 +55,9 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <a
-              href="#"
+              href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary text-base px-8 py-4 gap-2 animate-glow"
             >
               <Chrome size={20} />

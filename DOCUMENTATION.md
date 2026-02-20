@@ -391,7 +391,7 @@ foxadbox-landing/
 #### STUDIO SPY MODE (Star Feature)
 - Génération de prompts Midjourney prêts à l'emploi
 - Script vidéo adapté shot par shot
-- 5 variations publicitaires générées automatiquement
+- Brief créatif complet généré automatiquement
 - Propositions d'angles marketing différenciants
 
 #### STUDIO AD TRACKER

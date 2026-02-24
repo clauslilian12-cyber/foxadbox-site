@@ -23,7 +23,7 @@ export default function FeatureShowcase({
   highlighted = false,
 }: FeatureShowcaseProps) {
   return (
-    <div className={`grid ${reverse ? 'lg:grid-cols-[7fr_5fr]' : 'lg:grid-cols-[5fr_7fr]'} gap-8 lg:gap-12 items-center py-16 lg:py-24`}>
+    <div className={`grid ${reverse ? 'lg:grid-cols-[3fr_5fr]' : 'lg:grid-cols-[3fr_5fr]'} gap-8 lg:gap-12 items-center py-16 lg:py-24`}>
       {/* Text Content */}
       <div className={`space-y-6 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
         {/* Badge */}

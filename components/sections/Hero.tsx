@@ -72,27 +72,28 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Hero Video Demo */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 relative max-w-6xl mx-auto px-4 sm:px-0"
-          >
-            <div className="rounded-xl overflow-hidden border border-dark-400 bg-dark-300" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
-              <video
-                src="/videos/hero-demo.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full object-contain"
-              />
-            </div>
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-accent/5 rounded-2xl blur-3xl -z-10" />
-          </motion.div>
         </div>
+
+        {/* Hero Video Demo — outside max-w-4xl so it can be wider */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-16 relative w-full px-4 sm:px-0"
+        >
+          <div className="rounded-xl overflow-hidden border border-dark-400 bg-dark-300" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
+            <video
+              src="/videos/hero-demo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full object-contain"
+            />
+          </div>
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-accent/5 rounded-2xl blur-3xl -z-10" />
+        </motion.div>
       </div>
     </section>
   )

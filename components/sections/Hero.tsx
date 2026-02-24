@@ -77,9 +77,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 relative max-w-4xl mx-auto"
+            className="mt-16 relative max-w-6xl mx-auto px-4 sm:px-0"
           >
-            <div className="rounded-2xl overflow-hidden border border-dark-400 shadow-2xl bg-dark-300">
+            <div className="rounded-xl overflow-hidden border border-dark-400 bg-dark-300" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
               <video
                 src="/videos/hero-demo.mp4"
                 autoPlay

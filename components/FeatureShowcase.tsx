@@ -23,7 +23,7 @@ export default function FeatureShowcase({
   highlighted = false,
 }: FeatureShowcaseProps) {
   return (
-    <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-16 lg:py-24 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+    <div className={`grid ${reverse ? 'lg:grid-cols-[7fr_5fr]' : 'lg:grid-cols-[5fr_7fr]'} gap-8 lg:gap-12 items-center py-16 lg:py-24`}>
       {/* Text Content */}
       <div className={`space-y-6 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
         {/* Badge */}
@@ -65,25 +65,21 @@ export default function FeatureShowcase({
         </ul>
       </div>
 
-      {/* Image Placeholder */}
-      <div className={`relative ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
-        <div className={`relative overflow-hidden ${
-          highlighted ? 'shadow-lg shadow-accent/10' : ''
-        }`}>
+      {/* Image */}
+      <div className={`relative my-8 ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
+        <div className="relative overflow-hidden rounded-xl" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
           {imageSrc ? (
-            <div className={`rounded-2xl overflow-hidden border ${
+            <div className={`rounded-xl overflow-hidden border ${
               highlighted ? 'border-accent/30' : 'border-dark-400'
             }`}>
-              <div className="aspect-video">
-                <img
-                  src={imageSrc}
-                  alt={imageAlt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                className="w-full h-auto object-contain"
+              />
             </div>
           ) : (
-            <div className={`aspect-video rounded-2xl bg-gradient-to-br from-dark-200 via-dark-300 to-dark-200 flex flex-col items-center justify-center border-2 border-dashed ${
+            <div className={`aspect-video rounded-xl bg-gradient-to-br from-dark-200 via-dark-300 to-dark-200 flex flex-col items-center justify-center border-2 border-dashed ${
               highlighted ? 'border-accent/40' : 'border-dark-400'
             }`}>
               <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${

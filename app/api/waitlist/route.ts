@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     })
 
     // Attendre 500ms pour éviter le rate limit (2 req/sec)
-    await new Promise(resolve => setTimeout(resolve, 500))
+    await new Promise(resolve => setTimeout(resolve, 1500))
 
     // 3. Notifier l'admin
     try {

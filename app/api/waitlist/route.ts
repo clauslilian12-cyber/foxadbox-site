@@ -13,12 +13,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Email invalide" }, { status: 400 })
     }
 
-    // 1. Ajouter l'email à l'Audience Resend (waitlist)
-    await resend.contacts.create({
-      email,
-      audienceId: process.env.RESEND_AUDIENCE_ID!,
-      unsubscribed: false,
-    })
+    // 1. Ajouter le contact dans Resend
+    await resend.contacts.create({ email })
 
     // 2. Envoyer l'email de confirmation au user
     await resend.emails.send({

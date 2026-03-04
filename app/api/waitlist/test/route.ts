@@ -8,7 +8,7 @@ export async function GET() {
   const tests = []
 
   // Test 1 : Variables d'environnement présentes
-  const envVars = ["RESEND_API_KEY", "RESEND_AUDIENCE_ID", "NOTIFY_EMAIL"]
+  const envVars = ["RESEND_API_KEY", "NOTIFY_EMAIL"]
   const missingEnv = envVars.filter((v) => !process.env[v])
   tests.push({
     name: "Variables d'environnement",
@@ -18,16 +18,16 @@ export async function GET() {
         : `❌ Manquantes: ${missingEnv.join(", ")}`,
   })
 
-  // Test 2 : Connexion Resend
+  // Test 2 : Clé API Resend valide
   try {
     const { Resend } = await import("resend")
     const resend = new Resend(process.env.RESEND_API_KEY)
-    await resend.audiences.get(process.env.RESEND_AUDIENCE_ID!)
-    tests.push({ name: "Connexion Resend + Audience", status: "✅ OK" })
+    await resend.emails.list()
+    tests.push({ name: "Clé API Resend", status: "✅ OK" })
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.message : String(e)
     tests.push({
-      name: "Connexion Resend + Audience",
+      name: "Clé API Resend",
       status: `❌ ${msg}`,
     })
   }

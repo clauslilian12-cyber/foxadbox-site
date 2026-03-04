@@ -1,7 +1,6 @@
 import { Resend } from "resend"
 import { NextResponse } from "next/server"
 import WaitlistConfirmation from "@/emails/waitlist-confirmation"
-import WaitlistNotifyAdmin from "@/emails/waitlist-notify-admin"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -14,11 +13,12 @@ export async function POST(req: Request) {
     }
 
     // 1. Ajouter le contact dans Resend
-    await resend.contacts.create({
+    const contactResult = await resend.contacts.create({
       email,
       audienceId: process.env.RESEND_AUDIENCE_ID!,
       unsubscribed: false,
     })
+    console.log("Contact create result:", JSON.stringify(contactResult))
 
     // 2. Envoyer l'email de confirmation au user
     await resend.emails.send({
@@ -36,12 +36,11 @@ export async function POST(req: Request) {
 
     // 3. Notifier l'admin
     try {
-      console.log("Sending admin notif to:", process.env.NOTIFY_EMAIL)
       const adminResult = await resend.emails.send({
         from: "FoxAdBox Waitlist <noreply@foxadbox.com>",
-        to: process.env.NOTIFY_EMAIL!,
+        to: "claus.lilian12@gmail.com",
         subject: "Nouvelle inscription waitlist FoxAdBox",
-        react: WaitlistNotifyAdmin({ email, date: new Date().toISOString() }),
+        html: `<p>Nouvelle inscription waitlist :</p><p><strong>${email}</strong></p><p>${new Date().toISOString()}</p>`,
       })
       console.log("Admin notif sent:", JSON.stringify(adminResult))
     } catch (adminError) {

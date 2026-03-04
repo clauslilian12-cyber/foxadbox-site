@@ -15,7 +15,6 @@ export async function POST(req: Request) {
     // 1. Ajouter le contact dans Resend
     const contactResult = await resend.contacts.create({
       email,
-      audienceId: process.env.RESEND_AUDIENCE_ID!,
       unsubscribed: false,
     })
     console.log("Contact create result:", JSON.stringify(contactResult))

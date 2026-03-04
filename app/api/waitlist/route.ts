@@ -20,10 +20,12 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "FoxAdBox <noreply@foxadbox.com>",
       to: email,
-      subject: "Tu es sur la liste — FoxAdBox arrive bientôt",
+      subject: "Bienvenue sur la liste FoxAdBox",
       react: WaitlistConfirmation({ email }),
       headers: {
         "X-Entity-Ref-ID": crypto.randomUUID(),
+        "Precedence": "bulk",
+        "X-Auto-Response-Suppress": "OOF, DR, RN, NRN, AutoReply",
         "List-Unsubscribe": "<mailto:unsubscribe@foxadbox.com>",
       },
     })

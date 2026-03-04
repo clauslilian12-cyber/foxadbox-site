@@ -29,12 +29,18 @@ export async function POST(req: Request) {
     })
 
     // 3. Notifier l'admin
-    await resend.emails.send({
-      from: "FoxAdBox Waitlist <noreply@foxadbox.com>",
-      to: process.env.NOTIFY_EMAIL!,
-      subject: "🦊 Nouvelle inscription waitlist",
-      react: WaitlistNotifyAdmin({ email, date: new Date().toISOString() }),
-    })
+    try {
+      console.log("Sending admin notif to:", process.env.NOTIFY_EMAIL)
+      const adminResult = await resend.emails.send({
+        from: "FoxAdBox Waitlist <noreply@foxadbox.com>",
+        to: process.env.NOTIFY_EMAIL!,
+        subject: "Nouvelle inscription waitlist FoxAdBox",
+        react: WaitlistNotifyAdmin({ email, date: new Date().toISOString() }),
+      })
+      console.log("Admin notif sent:", JSON.stringify(adminResult))
+    } catch (adminError) {
+      console.error("Admin notif failed:", adminError)
+    }
 
     return NextResponse.json({ success: true })
   } catch (error: unknown) {

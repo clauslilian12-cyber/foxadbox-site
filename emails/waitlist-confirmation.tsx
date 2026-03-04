@@ -40,14 +40,14 @@ export default function WaitlistConfirmation({ email }: WaitlistConfirmationProp
           {/* Body */}
           <Text style={paragraph}>
             FoxAdBox arrive bientôt. Tu seras parmi les premiers à être notifié
-            — et tu bénéficies d'un <strong style={{ color: "#f97316" }}>accès early bird
-            avec 30% de réduction à vie</strong>.
+            — et tu bénéficies d'un <strong style={{ color: "#00F5D4" }}>accès early bird
+            avec 30% de réduction sur ta première année d&apos;abonnement</strong>.
           </Text>
 
           {/* Perks */}
           <Section style={perksSection}>
             <Text style={perkItem}>&#9889; <strong>Accès prioritaire</strong> — Sois parmi les premiers à tester</Text>
-            <Text style={perkItem}>&#127919; <strong>Réduction early bird</strong> — 30% off à vie sur tous les plans</Text>
+            <Text style={perkItem}>&#127919; <strong>Réduction early bird</strong> — 30% de réduction sur ta première année d&apos;abonnement</Text>
             <Text style={perkItem}>&#129309; <strong>Influence le produit</strong> — Tes retours façonnent FoxAdBox</Text>
           </Section>
 
@@ -68,7 +68,7 @@ export default function WaitlistConfirmation({ email }: WaitlistConfirmationProp
             Pas de spam. Désabonnement en 1 clic.
           </Text>
           <Text style={footerLink}>
-            <Link href="https://foxadbox.com/unsubscribe" style={{ color: "#737373", textDecoration: "underline" }}>
+            <Link href="https://foxadbox.com/unsubscribe" style={{ color: "rgba(255,255,255,0.4)", textDecoration: "underline" }}>
               Se désabonner
             </Link>
           </Text>
@@ -79,14 +79,14 @@ export default function WaitlistConfirmation({ email }: WaitlistConfirmationProp
 }
 
 const body: React.CSSProperties = {
-  backgroundColor: "#09090b",
+  backgroundColor: "#0d0e1a",
   fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   margin: "0",
   padding: "0",
 }
 
 const container: React.CSSProperties = {
-  backgroundColor: "#09090b",
+  backgroundColor: "#0d0e1a",
   maxWidth: "560px",
   margin: "0 auto",
   padding: "40px 24px",
@@ -112,7 +112,7 @@ const brandText: React.CSSProperties = {
 }
 
 const hr: React.CSSProperties = {
-  borderColor: "rgba(255,255,255,0.1)",
+  borderColor: "rgba(0,245,212,0.2)",
   margin: "24px 0",
 }
 
@@ -126,7 +126,7 @@ const heading: React.CSSProperties = {
 }
 
 const paragraph: React.CSSProperties = {
-  color: "#a1a1aa",
+  color: "rgba(255,255,255,0.6)",
   fontSize: "15px",
   lineHeight: "1.6",
   margin: "0 0 24px 0",
@@ -134,15 +134,15 @@ const paragraph: React.CSSProperties = {
 }
 
 const perksSection: React.CSSProperties = {
-  backgroundColor: "rgba(255,255,255,0.03)",
+  backgroundColor: "#1a1d4a",
   borderRadius: "12px",
-  border: "1px solid rgba(255,255,255,0.06)",
+  border: "1px solid rgba(0,245,212,0.2)",
   padding: "20px 24px",
   margin: "0 0 24px 0",
 }
 
 const perkItem: React.CSSProperties = {
-  color: "#d4d4d8",
+  color: "rgba(255,255,255,0.6)",
   fontSize: "14px",
   lineHeight: "1.5",
   margin: "0 0 12px 0",
@@ -154,8 +154,8 @@ const ctaSection: React.CSSProperties = {
 }
 
 const ctaButton: React.CSSProperties = {
-  backgroundColor: "#f97316",
-  color: "#ffffff",
+  backgroundColor: "#00F5D4",
+  color: "#0d0e1a",
   fontSize: "15px",
   fontWeight: "600",
   textDecoration: "none",
@@ -165,7 +165,7 @@ const ctaButton: React.CSSProperties = {
 }
 
 const footerText: React.CSSProperties = {
-  color: "#737373",
+  color: "rgba(255,255,255,0.4)",
   fontSize: "12px",
   textAlign: "center" as const,
   margin: "0 0 4px 0",

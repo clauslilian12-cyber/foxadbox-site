@@ -14,7 +14,11 @@ export async function POST(req: Request) {
     }
 
     // 1. Ajouter le contact dans Resend
-    await resend.contacts.create({ email })
+    await resend.contacts.create({
+      email,
+      audienceId: process.env.RESEND_AUDIENCE_ID!,
+      unsubscribed: false,
+    })
 
     // 2. Envoyer l'email de confirmation au user
     await resend.emails.send({

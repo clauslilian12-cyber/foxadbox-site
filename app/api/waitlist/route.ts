@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "FoxAdBox <noreply@foxadbox.com>",
       to: email,
-      subject: "Bienvenue sur la liste FoxAdBox",
+      subject: "Tu es sur la liste — FoxAdBox arrive bientôt 🦊",
       react: WaitlistConfirmation({ email }),
       headers: {
         "X-Entity-Ref-ID": crypto.randomUUID(),

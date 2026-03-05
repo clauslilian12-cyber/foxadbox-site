@@ -48,7 +48,7 @@ export default function FeatureShowcase({
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Essai Gratuit
+            Try for Free
           </a>
         </div>
 

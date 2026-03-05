@@ -2,11 +2,11 @@ import Link from 'next/link'
 
 export default function Footer() {
   const footerLinks = {
-    produit: [
+    product: [
       { label: 'Features', href: '#features' },
       { label: 'Pricing', href: '#pricing' },
     ],
-    ressources: [
+    resources: [
       { label: 'Guide', href: '#' },
       { label: 'Support', href: '#' },
     ],
@@ -27,15 +27,15 @@ export default function Footer() {
               <span className="text-white">FoxAdBox</span>
             </Link>
             <p className="text-gray-500 text-sm">
-              L'extension Chrome qui transforme vos analyses concurrentielles en actions marketing.
+              The Chrome extension that turns competitive analysis into marketing action.
             </p>
           </div>
 
-          {/* Produit */}
+          {/* Product */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Produit</h4>
+            <h4 className="text-white font-semibold mb-4">Product</h4>
             <ul className="space-y-3">
-              {footerLinks.produit.map((link) => (
+              {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -48,11 +48,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Ressources */}
+          {/* Resources */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Ressources</h4>
+            <h4 className="text-white font-semibold mb-4">Resources</h4>
             <ul className="space-y-3">
-              {footerLinks.ressources.map((link) => (
+              {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
@@ -65,9 +65,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Légal */}
+          {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Légal</h4>
+            <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-dark-400">
           <p className="text-center text-gray-600 text-sm">
-            © 2025 FoxAdBox. Tous droits reserves.
+            © 2025 FoxAdBox. All rights reserved.
           </p>
         </div>
       </div>

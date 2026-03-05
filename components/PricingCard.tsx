@@ -36,7 +36,7 @@ export default function PricingCard({
       {popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
           <span className="bg-accent text-dark text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">
-            Populaire
+            Popular
           </span>
         </div>
       )}
@@ -77,7 +77,7 @@ export default function PricingCard({
           </span>
           <div className="flex items-baseline justify-center gap-1">
             <span className="text-4xl font-bold text-white transition-all duration-300">{price}</span>
-            <span className="text-gray-500">/mois</span>
+            <span className="text-gray-500">/mo</span>
           </div>
           <span
             className="mt-1 transition-opacity duration-300"

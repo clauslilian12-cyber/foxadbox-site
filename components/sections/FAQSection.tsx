@@ -17,28 +17,28 @@ export default function FAQSection() {
 
   const faqItems: FAQItem[] = [
     {
-      question: 'Puis-je annuler mon abonnement a tout moment ?',
-      answer: 'Oui, sans engagement. Annulation en 1 clic depuis votre espace. Vous gardez l\'acces jusqu\'a la fin de votre periode payee.',
+      question: 'Can I cancel anytime?',
+      answer: 'Yes, no commitment. Cancel in one click from your dashboard. You keep access until the end of your billing period.',
     },
     {
-      question: 'Mes donnees sont-elles securisees ?',
-      answer: 'Absolument. Donnees chiffrees, stockees en Europe, RGPD compliant. Nous n\'avons aucun acces a vos mots de passe ou historique de navigation.',
+      question: 'What types of ads can FoxAdBox analyze?',
+      answer: 'Any photo or video ad you see on any website — Facebook, Instagram, TikTok, YouTube, landing pages, and more. If you can see it in your browser, FoxAdBox can analyze it.',
     },
     {
-      question: 'Sur quels navigateurs fonctionne FoxAdBox ?',
-      answer: 'Actuellement sur Google Chrome (desktop). Firefox et Edge arrivent bientot.',
+      question: 'Does it generate prompts for AI tools like Midjourney or Runway?',
+      answer: 'Yes. Spy Mode generates Midjourney prompts for image creation, AI video prompts adapted shot by shot, and complete UGC scripts — all tailored to your specific product.',
     },
     {
-      question: 'Que se passe-t-il si j\'atteins ma limite mensuelle ?',
-      answer: 'Vous recevez une notification avant. Vous pouvez upgrader votre plan ou attendre le renouvellement mensuel.',
+      question: 'Is my data secure?',
+      answer: 'Absolutely. Your data is encrypted, stored in Europe, and GDPR compliant. We never access your passwords or browsing history.',
     },
     {
-      question: 'L\'integration Notion est-elle obligatoire ?',
-      answer: 'Non, c\'est optionnel. Vous pouvez utiliser la Bibliotheque interne sans connecter Notion.',
+      question: 'Which browsers are supported?',
+      answer: 'Currently Google Chrome (desktop). Firefox and Edge support coming soon.',
     },
     {
-      question: 'Est-ce legal d\'analyser les pubs de mes concurrents ?',
-      answer: 'Oui. FoxAdBox analyse uniquement des publicites diffusees publiquement. C\'est comme prendre des notes sur une pub que vous voyez, mais automatise.',
+      question: 'Is it legal to analyze competitor ads?',
+      answer: 'Yes. FoxAdBox only analyzes publicly visible ads — it\'s like taking notes on an ad you see, but fully automated and AI-powered.',
     },
   ]
 
@@ -49,10 +49,10 @@ export default function FAQSection() {
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-medium mb-4 block tracking-wider uppercase">FAQ</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Questions frequentes
+            Frequently Asked Questions
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Tout ce que vous devez savoir sur FoxAdBox.
+            Everything you need to know about FoxAdBox.
           </p>
         </div>
 

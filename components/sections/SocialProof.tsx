@@ -3,17 +3,17 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  { value: '+1,500', label: 'Pubs analysees cette semaine' },
-  { value: '+200', label: 'Nouveaux utilisateurs ce mois' },
+  { value: '+1,500', label: 'Ads analyzed this week' },
+  { value: '+200', label: 'New users this month' },
 ]
 
 const badges = [
   'Media Buyers',
   'E-commerce',
-  'Agences',
+  'Agencies',
   'UGC Creators',
   'Dropshippers',
-  'Freelances',
+  'Freelancers',
 ]
 
 export default function SocialProof() {
@@ -50,7 +50,7 @@ export default function SocialProof() {
           transition={{ delay: 0.2 }}
           className="flex flex-wrap justify-center items-center gap-3"
         >
-          <span className="text-gray-500 text-sm mr-2">Utilise par les professionnels du marketing digital :</span>
+          <span className="text-gray-500 text-sm mr-2">Used by digital marketing professionals:</span>
           {badges.map((badge, index) => (
             <span
               key={index}

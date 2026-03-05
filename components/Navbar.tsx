@@ -60,7 +60,7 @@ export default function Navbar() {
               className="btn-primary gap-2"
             >
               <Chrome size={18} />
-              Installer l'extension
+              Install Extension
             </a>
           </div>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
                 className="btn-primary gap-2 mt-2"
               >
                 <Chrome size={18} />
-                Installer l'extension
+                Install Extension
               </a>
             </div>
           </div>

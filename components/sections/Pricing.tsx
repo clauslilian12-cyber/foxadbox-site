@@ -11,9 +11,9 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true)
 
   const guarantees = [
-    'Annulation à tout moment',
-    '14 jours satisfait ou remboursé',
-    "Pas d'engagement",
+    'Cancel anytime',
+    '14-day money-back guarantee',
+    'No commitment',
   ]
 
   return (
@@ -23,10 +23,10 @@ export default function Pricing() {
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-medium mb-4 block">Pricing</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Un plan adapté à chaque besoin
+            A plan for every need
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Que vous soyez freelance ou agence, trouvez le plan parfait pour booster votre veille concurrentielle.
+            Whether you're a freelancer or an agency, find the perfect plan to supercharge your competitive intelligence.
           </p>
 
           {/* Toggle Mensuel / Annuel */}
@@ -53,7 +53,7 @@ export default function Pricing() {
                   transition: 'all 0.3s',
                 }}
               >
-                Mensuel
+                Monthly
               </button>
               <button
                 onClick={() => setIsAnnual(true)}
@@ -72,7 +72,7 @@ export default function Pricing() {
                   gap: '8px',
                 }}
               >
-                Annuel
+                Yearly
                 <span
                   style={{
                     background: '#00F5D4',
@@ -83,7 +83,7 @@ export default function Pricing() {
                     fontWeight: 700,
                   }}
                 >
-                  -20%
+                  Save 20%
                 </span>
               </button>
             </div>
@@ -100,12 +100,12 @@ export default function Pricing() {
             billedText={undefined}
             showDiscount={isAnnual}
             features={[
-              '150 analyses photo',
-              '100 analyses video',
-              '70 prompts Midjourney',
-              '40 scripts video',
+              '150 photo analyses',
+              '100 video analyses',
+              '70 Midjourney prompts',
+              '40 video scripts',
             ]}
-            cta="Choisir Starter"
+            cta="Choose Starter"
             ctaLink={CHROME_STORE_URL}
           />
 
@@ -117,13 +117,13 @@ export default function Pricing() {
             billedText={undefined}
             showDiscount={isAnnual}
             features={[
-              '450 analyses photo',
-              '350 analyses video',
-              '250 prompts Midjourney',
-              '120 scripts video',
-              'Support prioritaire',
+              '450 photo analyses',
+              '350 video analyses',
+              '250 Midjourney prompts',
+              '120 video scripts',
+              'Priority support',
             ]}
-            cta="Choisir Pro"
+            cta="Choose Pro"
             ctaLink={CHROME_STORE_URL}
             popular
           />
@@ -136,13 +136,13 @@ export default function Pricing() {
             billedText={undefined}
             showDiscount={isAnnual}
             features={[
-              '900 analyses photo',
-              '700 analyses video',
-              '300 prompts Midjourney',
-              '240 scripts video',
-              'Support dedie',
+              '900 photo analyses',
+              '700 video analyses',
+              '300 Midjourney prompts',
+              '240 video scripts',
+              'Dedicated support',
             ]}
-            cta="Choisir Agency"
+            cta="Choose Agency"
             ctaLink={CHROME_STORE_URL}
           />
         </div>

@@ -4,21 +4,21 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    quote: "Je passais 2h par jour sur Ad Library. Maintenant je genere mes scripts en 10 minutes. FoxAdBox a change ma facon de travailler.",
+    quote: "I used to spend 2 hours a day on Ad Library. Now I generate full creative briefs in under 10 minutes. FoxAdBox completely changed how I work.",
     name: "Thomas R.",
-    role: "Media Buyer Freelance",
+    role: "Freelance Media Buyer",
     avatar: "TR",
   },
   {
-    quote: "Le Spy Mode est incroyable. Je decris mon produit, j'ai un prompt Midjourney parfait en 30 secondes. Mes creas n'ont jamais ete aussi performantes.",
+    quote: "Spy Mode is insane. I describe my product, and I get a perfect Midjourney prompt in 30 seconds. My creatives have never performed this well.",
     name: "Julie M.",
-    role: "Fondatrice E-commerce",
+    role: "E-commerce Founder",
     avatar: "JM",
   },
   {
-    quote: "On track tous nos clients concurrents avec Ad Tracker. L'export Notion a transforme notre workflow d'agence. Indispensable.",
+    quote: "We track all our clients' competitors with Ad Tracker. The Notion export transformed our agency workflow. It's non-negotiable now.",
     name: "Kevin L.",
-    role: "CEO Agence Marketing",
+    role: "Marketing Agency CEO",
     avatar: "KL",
   },
 ]
@@ -35,13 +35,13 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <span className="text-accent text-sm font-medium mb-4 block tracking-wider uppercase">
-            Temoignages
+            Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ils ont transforme leur veille en resultats
+            They turned competitive intelligence into results
           </h2>
           <p className="text-gray-400 text-lg">
-            Rejoignez les marketers qui gagnent du temps chaque jour
+            Join the marketers saving hours every day
           </p>
         </motion.div>
 

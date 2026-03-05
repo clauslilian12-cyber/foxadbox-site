@@ -22,7 +22,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-dark-300 border border-dark-400 rounded-full px-4 py-2 mb-8"
           >
             <Chrome size={16} className="text-accent" />
-            <span className="text-sm text-gray-300">Extension Chrome</span>
+            <span className="text-sm text-gray-300">Chrome Extension — Now in Beta</span>
           </motion.div>
 
           {/* Title */}
@@ -32,8 +32,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance"
           >
-            Transformez les pubs de vos concurrents en votre{' '}
-            <span className="gradient-text">prochaine campagne gagnante</span>
+            Your Competitors&apos; Ads Are Telling You Everything.{' '}
+            <span className="gradient-text">Are You Listening?</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -43,8 +43,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto text-balance"
           >
-            FoxAdBox analyse les publicites photos et videos de vos concurrents, genere des prompts
-            Midjourney et des scripts video adaptes a <span className="text-white font-medium">VOTRE</span> produit.
+            FoxAdBox reverse-engineers any photo or video ad you see online. It reveals the hidden psychology, the creative secrets, and the exact techniques that make it convert — then instantly adapts everything to <span className="text-white font-medium">YOUR</span> product, <span className="text-white font-medium">YOUR</span> brand, and <span className="text-white font-medium">YOUR</span> creative workflow.
           </motion.p>
 
           {/* CTAs */}
@@ -61,39 +60,19 @@ export default function Hero() {
               className="btn-primary text-base px-8 py-4 gap-2 animate-glow"
             >
               <Chrome size={20} />
-              Installer gratuitement sur Chrome
+              Install for Free on Chrome →
             </a>
             <a
               href="#features"
               className="btn-secondary text-base px-8 py-4 gap-2"
             >
-              Voir comment ca marche
+              See How It Works ↓
               <ArrowRight size={18} />
             </a>
           </motion.div>
 
         </div>
 
-        {/* Hero Video Demo — outside max-w-4xl so it can be wider */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 relative w-full px-4 sm:px-0"
-        >
-          <div className="rounded-xl overflow-hidden border border-dark-400 bg-dark-300" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
-            <video
-              src="/videos/hero-demo.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full object-contain"
-            />
-          </div>
-          {/* Glow effect */}
-          <div className="absolute inset-0 bg-accent/5 rounded-2xl blur-3xl -z-10" />
-        </motion.div>
       </div>
     </section>
   )

@@ -5,68 +5,68 @@ import FeatureShowcase from '@/components/FeatureShowcase'
 export default function Features() {
   const features = [
     {
-      badge: 'STUDIO PHOTO',
-      title: 'Analysez n\'importe quelle pub en un clic.',
+      badge: 'PHOTO STUDIO',
+      title: 'Decode Any Ad in One Click',
       points: [
-        'Capture directe sur n\'importe quel site web',
-        'Identification précise de l\'audience cible',
-        'Analyse complète du hook visuel',
-        'Décryptage du message publicitaire',
+        'Capture directly from any website',
+        'Full AI breakdown of the creative strategy',
+        'Emotional & psychological trigger analysis',
+        'Audience identification & positioning insights',
       ],
       imageSrc: '/images/studio-photo.jpg',
-      imageAlt: 'Studio Photo - Capture et analyse de publicités',
+      imageAlt: 'Photo Studio - Capture and analyze any ad',
       highlighted: false,
     },
     {
-      badge: 'STUDIO UPLOAD',
-      title: 'Importez vos fichiers, obtenez des insights.',
+      badge: 'VIDEO STUDIO',
+      title: 'Uncover Every Secret Inside a Video Ad',
       points: [
-        'Import de photos et vidéos depuis votre appareil',
-        'Analyse frame par frame des vidéos',
-        'Génération automatique du script complet',
-        'Détection des techniques de persuasion',
+        'Frame-by-frame AI analysis',
+        'Hook structure & pacing breakdown',
+        'Persuasion & storytelling technique detection',
+        'Full script reconstruction with insights',
       ],
       imageSrc: '/images/studio-upload.jpg',
-      imageAlt: 'Studio Upload - Import et analyse de fichiers',
+      imageAlt: 'Video Studio - Frame-by-frame video analysis',
       highlighted: false,
     },
     {
-      badge: 'STUDIO BIBLIOTHÈQUE',
-      title: 'Votre swipe file, enfin organisé.',
+      badge: 'LIBRARY STUDIO',
+      title: 'Your Organized Swipe File, Finally',
       points: [
-        'Stockage illimité de vos analyses',
-        'Organisation par playlists personnalisées',
-        'Historique détaillé de chaque analyse sauvegardée',
-        'Export vers Notion en un clic',
+        'Unlimited saved analyses',
+        'Custom playlist organization',
+        'Full analysis history per ad',
+        'One-click Notion export',
       ],
       imageSrc: '/images/studio-library.jpg',
-      imageAlt: 'Studio Bibliothèque - Organisation de votre swipe file',
+      imageAlt: 'Library Studio - Your organized swipe file',
       highlighted: false,
     },
     {
-      badge: 'STUDIO SPY MODE',
-      title: 'Transformez les pubs concurrentes en scripts pour VOUS.',
+      badge: 'SPY MODE',
+      title: 'Turn Their Ads Into Your Content',
       points: [
-        'Génération de prompts Midjourney prêts à l\'emploi',
-        'Script vidéo adapté shot par shot',
-        'Brief créatif complet généré automatiquement',
-        'Propositions d\'angles marketing différenciants',
+        'Midjourney prompts tailored to your product',
+        'AI video prompts adapted shot by shot',
+        'Full UGC scripts for creators — hook, body, CTA',
+        'Complete creative brief generated automatically',
       ],
       imageSrc: '/images/spy-mode.jpg',
-      imageAlt: 'Studio Spy Mode - Adaptation de publicités',
+      imageAlt: 'Spy Mode - Turn competitor ads into your content',
       highlighted: true,
     },
     {
-      badge: 'STUDIO AD TRACKER',
-      title: 'Surveillez vos concurrents automatiquement.',
+      badge: 'AD TRACKER',
+      title: 'Monitor Competitors on Autopilot',
       points: [
-        'Suivi simultané de plusieurs concurrents',
-        'Vue d\'ensemble des analyses par concurrent',
-        'Interface intuitive pour une veille rapide et efficace',
-        'Synchronisation automatique avec Notion',
+        'Track multiple competitors at once',
+        'Full creative overview per competitor',
+        'Fast & intuitive competitive monitoring',
+        'Auto-sync with Notion',
       ],
       imageSrc: '/images/ad-tracker.jpg',
-      imageAlt: 'Studio Ad Tracker - Surveillance concurrentielle',
+      imageAlt: 'Ad Tracker - Monitor competitors on autopilot',
       highlighted: false,
     },
   ]
@@ -77,14 +77,14 @@ export default function Features() {
         {/* Section Header */}
         <div className="text-center py-16 lg:py-24">
           <span className="text-accent text-sm font-medium mb-4 block tracking-wider uppercase">
-            Fonctionnalités
+            Features
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            5 outils puissants.{' '}
-            <span className="text-accent">Une seule extension.</span>
+            5 Powerful Studios.{' '}
+            <span className="text-accent">One Extension.</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Chaque studio est conçu pour une étape précise de votre workflow d'analyse concurrentielle.
+            Each studio handles a specific step of your competitive intelligence workflow — from capture to creation.
           </p>
         </div>
 

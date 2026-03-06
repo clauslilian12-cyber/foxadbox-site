@@ -46,6 +46,47 @@ export default function Hero() {
             FoxAdBox reverse-engineers any photo or video ad you see online. It reveals the hidden psychology, the creative secrets, and the exact techniques that make it convert — then instantly adapts everything to <span className="text-white font-medium">YOUR</span> product, <span className="text-white font-medium">YOUR</span> brand, and <span className="text-white font-medium">YOUR</span> creative workflow.
           </motion.p>
 
+          {/* Waitlist Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            style={{ marginBottom: '28px' }}
+          >
+            <a
+              href="https://foxadbox.com/waitlist"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                background: 'rgba(42,45,100,0.5)',
+                border: '1px solid rgba(0,245,212,0.3)',
+                borderRadius: '999px',
+                padding: '10px 20px',
+                color: '#00F5D4',
+                fontSize: '14px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background 0.2s',
+                textDecoration: 'none',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(42,45,100,0.8)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(42,45,100,0.5)')}
+            >
+              <span
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: '#f97316',
+                  animation: 'waitlist-pulse 2s infinite',
+                  flexShrink: 0,
+                }}
+              />
+              Chrome Web Store approval in progress — Join the waitlist &amp; get 30% off →
+            </a>
+          </motion.div>
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

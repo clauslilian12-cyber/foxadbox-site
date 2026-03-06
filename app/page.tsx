@@ -11,7 +11,6 @@ import {
   TimeSavingsMetrics,
   ValueProposition,
   Testimonials,
-  WhoIsItFor,
   Pricing,
   FAQSection,
   Guarantee,
@@ -33,7 +32,6 @@ export default function Home() {
         <TimeSavingsMetrics />
         <ValueProposition />
         <Testimonials />
-        <WhoIsItFor />
         <Pricing />
         <FAQSection />
         <Guarantee />

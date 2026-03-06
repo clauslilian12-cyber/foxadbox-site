@@ -3,12 +3,18 @@ import Footer from '@/components/Footer'
 import {
   Hero,
   SocialProof,
+  TheProblem,
+  HowItWorks,
+  Platforms,
   BeforeAfter,
   Features,
+  TimeSavingsMetrics,
   ValueProposition,
   Testimonials,
+  WhoIsItFor,
   Pricing,
   FAQSection,
+  Guarantee,
   CTAFinal,
 } from '@/components/sections'
 
@@ -19,12 +25,18 @@ export default function Home() {
       <main>
         <Hero />
         <SocialProof />
+        <TheProblem />
+        <HowItWorks />
+        <Platforms />
         <BeforeAfter />
         <Features />
+        <TimeSavingsMetrics />
         <ValueProposition />
         <Testimonials />
+        <WhoIsItFor />
         <Pricing />
         <FAQSection />
+        <Guarantee />
         <CTAFinal />
       </main>
       <Footer />

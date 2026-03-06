@@ -7,7 +7,6 @@ import {
   HowItWorks,
   Platforms,
   BeforeAfter,
-  Features,
   TimeSavingsMetrics,
   ValueProposition,
   Testimonials,
@@ -16,6 +15,7 @@ import {
   Guarantee,
   CTAFinal,
 } from '@/components/sections'
+import FeaturesCarousel from '@/components/FeaturesCarousel'
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
         <HowItWorks />
         <Platforms />
         <BeforeAfter />
-        <Features />
+        <FeaturesCarousel />
         <TimeSavingsMetrics />
         <ValueProposition />
         <Testimonials />

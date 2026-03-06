@@ -12,9 +12,6 @@ export default function CTAFinal() {
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
 
           <div className="relative z-10">
-            {/* Fox emoji */}
-            <span className="text-6xl mb-6 block">🦊</span>
-
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Your Competitors Are Running Winning Ads Right Now.
             </h2>

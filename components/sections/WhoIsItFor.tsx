@@ -4,28 +4,24 @@ import { motion } from 'framer-motion'
 
 const audiences = [
   {
-    emoji: '\u{1F4CA}',
     title: 'Media Buyers & Performance Marketers',
     description:
       'Stop burning budget on untested creatives. Understand exactly what\u2019s working in your niche \u2014 hooks, formats, angles \u2014 before you spend a single dollar on testing.',
     tag: 'Save $1,000s in testing costs',
   },
   {
-    emoji: '\u{1F6CD}\uFE0F',
     title: 'E-commerce & Dropshipping',
     description:
       'Find the ads that are actively selling products right now. Reverse-engineer the exact creative strategy and adapt it to your store in minutes, not weeks.',
     tag: 'Find winning products faster',
   },
   {
-    emoji: '\u{1F3AC}',
     title: 'UGC Creators & Creative Agencies',
     description:
       'Deliver better briefs, faster. Generate complete shot-by-shot UGC scripts and creative directions tailored to each client\u2019s product \u2014 in seconds.',
     tag: '10x your brief production speed',
   },
   {
-    emoji: '\u{1F916}',
     title: 'AI Content Creators',
     description:
       'Turn any competitor ad into Midjourney prompts and AI video prompts instantly. Create scroll-stopping visuals that are already proven to convert.',
@@ -35,7 +31,7 @@ const audiences = [
 
 export default function WhoIsItFor() {
   return (
-    <section style={{ background: '#0d0e1a' }} className="py-24">
+    <section style={{ background: '#0d0f2a' }} className="py-24">
       <div className="container-custom">
         <div className="text-center mb-16">
           <motion.span
@@ -91,7 +87,6 @@ export default function WhoIsItFor() {
                 padding: '32px',
               }}
             >
-              <span className="text-3xl block mb-4">{audience.emoji}</span>
               <h3 className="text-white font-bold text-xl mb-3">
                 {audience.title}
               </h3>

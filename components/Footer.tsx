@@ -17,13 +17,12 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark-100 border-t border-dark-400">
+    <footer style={{ background: '#0d0f2a' }} className="border-t border-dark-400">
       <div className="container-custom py-12 md:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-xl font-bold mb-4">
-              <span className="text-2xl">🦊</span>
               <span className="text-white">FoxAdBox</span>
             </Link>
             <p className="text-gray-500 text-sm">

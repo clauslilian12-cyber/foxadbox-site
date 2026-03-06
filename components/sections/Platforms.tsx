@@ -3,17 +3,17 @@
 import { motion } from 'framer-motion'
 
 const platforms = [
-  { emoji: '\u{1F4D8}', name: 'Facebook Ads' },
-  { emoji: '\u{1F4F8}', name: 'Instagram' },
-  { emoji: '\u{1F3B5}', name: 'TikTok' },
-  { emoji: '\u25B6\uFE0F', name: 'YouTube' },
-  { emoji: '\u{1F4BC}', name: 'LinkedIn' },
-  { emoji: '\u{1F310}', name: 'Any Website' },
+  { name: 'Facebook Ads' },
+  { name: 'Instagram' },
+  { name: 'TikTok' },
+  { name: 'YouTube' },
+  { name: 'LinkedIn' },
+  { name: 'Any Website' },
 ]
 
 export default function Platforms() {
   return (
-    <section style={{ background: '#0d0e1a' }} className="py-16">
+    <section style={{ background: '#0d0f2a' }} className="py-16">
       <div className="container-custom">
         <motion.p
           initial={{ opacity: 0 }}
@@ -43,9 +43,8 @@ export default function Platforms() {
                 fontSize: '14px',
                 fontWeight: 600,
               }}
-              className="text-white inline-flex items-center gap-2"
+              className="text-white"
             >
-              <span>{platform.emoji}</span>
               {platform.name}
             </span>
           ))}

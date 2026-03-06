@@ -5,21 +5,18 @@ import { motion } from 'framer-motion'
 const steps = [
   {
     number: '01',
-    emoji: '\u{1F3AF}',
     title: 'Capture Any Ad',
     description:
       'See an ad that catches your eye — on Facebook, TikTok, Instagram, YouTube, or any website. Click once to capture it with FoxAdBox.',
   },
   {
     number: '02',
-    emoji: '\u{1F9E0}',
     title: 'AI Decodes Everything',
     description:
       'FoxAdBox analyzes the hook structure, emotional triggers, persuasion techniques, target audience, and every creative decision that makes the ad convert.',
   },
   {
     number: '03',
-    emoji: '\u26A1',
     title: 'Get Your Creative Assets',
     description:
       'Receive a Midjourney prompt, an AI video prompt, a complete UGC script, and a full creative brief — all adapted to YOUR product and brand.',
@@ -99,7 +96,6 @@ export default function HowItWorks() {
                 >
                   {step.number}
                 </span>
-                <span className="text-2xl block mb-3">{step.emoji}</span>
                 <h3 className="text-white font-bold text-xl mb-3">
                   {step.title}
                 </h3>

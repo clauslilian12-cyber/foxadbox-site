@@ -4,19 +4,16 @@ import { motion } from 'framer-motion'
 
 const painCards = [
   {
-    emoji: '\u{1F624}',
     title: 'Hours of manual research',
     description:
       'Scrolling Ad Library for hours with no clear methodology or actionable output.',
   },
   {
-    emoji: '\u{1F4B8}',
     title: 'Budget wasted on testing',
     description:
       'Spending thousands testing creatives that you could have validated by analyzing what already works.',
   },
   {
-    emoji: '\u{1F937}',
     title: 'No system, no scale',
     description:
       'Seeing great ads but having no repeatable process to extract insights and apply them to your own brand.',
@@ -25,7 +22,7 @@ const painCards = [
 
 export default function TheProblem() {
   return (
-    <section style={{ background: '#0d0e1a' }} className="py-24">
+    <section style={{ background: '#0d0f2a' }} className="py-24">
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.span
@@ -87,7 +84,6 @@ export default function TheProblem() {
                 padding: '28px',
               }}
             >
-              <span className="text-3xl block mb-4">{card.emoji}</span>
               <h3 className="text-white font-semibold text-lg mb-2">
                 {card.title}
               </h3>

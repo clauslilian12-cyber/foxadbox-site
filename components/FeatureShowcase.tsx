@@ -1,6 +1,7 @@
 'use client'
 
 import { ImageIcon } from 'lucide-react'
+import { ReactNode } from 'react'
 
 interface FeatureShowcaseProps {
   badge: string
@@ -11,6 +12,7 @@ interface FeatureShowcaseProps {
   imageAlt: string
   reverse?: boolean
   highlighted?: boolean
+  demoComponent?: ReactNode
 }
 
 export default function FeatureShowcase({
@@ -21,6 +23,7 @@ export default function FeatureShowcase({
   imageAlt,
   reverse = false,
   highlighted = false,
+  demoComponent,
 }: FeatureShowcaseProps) {
   return (
     <div className={`grid ${reverse ? 'lg:grid-cols-[3fr_5fr]' : 'lg:grid-cols-[3fr_5fr]'} gap-8 lg:gap-12 items-center py-16 lg:py-24`}>
@@ -65,38 +68,42 @@ export default function FeatureShowcase({
         </ul>
       </div>
 
-      {/* Image */}
+      {/* Demo / Image */}
       <div className={`relative my-8 ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
-        <div className="relative overflow-hidden rounded-xl" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
-          {imageSrc ? (
-            <div className={`rounded-xl overflow-hidden border ${
-              highlighted ? 'border-accent/30' : 'border-dark-400'
-            }`}>
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                className="w-full h-auto object-contain"
-              />
-            </div>
-          ) : (
-            <div className={`aspect-video rounded-xl bg-gradient-to-br from-dark-200 via-dark-300 to-dark-200 flex flex-col items-center justify-center border-2 border-dashed ${
-              highlighted ? 'border-accent/40' : 'border-dark-400'
-            }`}>
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
-                highlighted ? 'bg-accent/10' : 'bg-dark-400/50'
+        {demoComponent ? (
+          <>
+            {demoComponent}
+            {highlighted && (
+              <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl -z-10" />
+            )}
+          </>
+        ) : (
+          <div className="relative overflow-hidden rounded-xl" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
+            {imageSrc ? (
+              <div className={`rounded-xl overflow-hidden border ${
+                highlighted ? 'border-accent/30' : 'border-dark-400'
               }`}>
-                <ImageIcon className={`w-8 h-8 ${highlighted ? 'text-accent/60' : 'text-gray-500'}`} />
+                <img
+                  src={imageSrc}
+                  alt={imageAlt}
+                  className="w-full h-auto object-contain"
+                />
               </div>
-              <p className={`text-sm font-medium ${highlighted ? 'text-accent/80' : 'text-gray-400'}`}>
-                Coming soon
-              </p>
-            </div>
-          )}
-        </div>
-
-        {/* Decorative glow effect for highlighted items */}
-        {highlighted && (
-          <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl -z-10" />
+            ) : (
+              <div className={`aspect-video rounded-xl bg-gradient-to-br from-dark-200 via-dark-300 to-dark-200 flex flex-col items-center justify-center border-2 border-dashed ${
+                highlighted ? 'border-accent/40' : 'border-dark-400'
+              }`}>
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+                  highlighted ? 'bg-accent/10' : 'bg-dark-400/50'
+                }`}>
+                  <ImageIcon className={`w-8 h-8 ${highlighted ? 'text-accent/60' : 'text-gray-500'}`} />
+                </div>
+                <p className={`text-sm font-medium ${highlighted ? 'text-accent/80' : 'text-gray-400'}`}>
+                  Coming soon
+                </p>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </div>

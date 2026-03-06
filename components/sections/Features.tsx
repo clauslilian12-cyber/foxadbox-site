@@ -1,6 +1,11 @@
 'use client'
 
 import FeatureShowcase from '@/components/FeatureShowcase'
+import PhotoStudioDemo from '@/components/studios/PhotoStudioDemo'
+import VideoStudioDemo from '@/components/studios/VideoStudioDemo'
+import UGCScriptDemo from '@/components/studios/UGCScriptDemo'
+import SpyModeDemo from '@/components/studios/SpyModeDemo'
+import AdTrackerDemo from '@/components/studios/AdTrackerDemo'
 
 export default function Features() {
   const features = [
@@ -16,6 +21,7 @@ export default function Features() {
       imageSrc: '/images/studio-photo.jpg',
       imageAlt: 'Photo Studio - Capture and analyze any ad',
       highlighted: false,
+      demo: <PhotoStudioDemo />,
     },
     {
       badge: 'VIDEO STUDIO',
@@ -29,6 +35,7 @@ export default function Features() {
       imageSrc: '/images/studio-upload.jpg',
       imageAlt: 'Video Studio - Frame-by-frame video analysis',
       highlighted: false,
+      demo: <VideoStudioDemo />,
     },
     {
       badge: 'LIBRARY STUDIO',
@@ -42,6 +49,7 @@ export default function Features() {
       imageSrc: '/images/studio-library.jpg',
       imageAlt: 'Library Studio - Your organized swipe file',
       highlighted: false,
+      demo: <UGCScriptDemo />,
     },
     {
       badge: 'SPY MODE',
@@ -55,6 +63,7 @@ export default function Features() {
       imageSrc: '/images/spy-mode.jpg',
       imageAlt: 'Spy Mode - Turn competitor ads into your content',
       highlighted: true,
+      demo: <SpyModeDemo />,
     },
     {
       badge: 'AD TRACKER',
@@ -68,6 +77,7 @@ export default function Features() {
       imageSrc: '/images/ad-tracker.jpg',
       imageAlt: 'Ad Tracker - Monitor competitors on autopilot',
       highlighted: false,
+      demo: <AdTrackerDemo />,
     },
   ]
 
@@ -100,6 +110,7 @@ export default function Features() {
               imageAlt={feature.imageAlt}
               reverse={index % 2 === 1}
               highlighted={feature.highlighted}
+              demoComponent={feature.demo}
             />
           ))}
         </div>

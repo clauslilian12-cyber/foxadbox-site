@@ -3,7 +3,7 @@
 import FeatureShowcase from '@/components/FeatureShowcase'
 import PhotoStudioDemo from '@/components/studios/PhotoStudioDemo'
 import VideoStudioDemo from '@/components/studios/VideoStudioDemo'
-import UGCScriptDemo from '@/components/studios/UGCScriptDemo'
+import LibraryDemo from '@/components/studios/LibraryDemo'
 import SpyModeDemo from '@/components/studios/SpyModeDemo'
 import AdTrackerDemo from '@/components/studios/AdTrackerDemo'
 
@@ -49,7 +49,7 @@ export default function Features() {
       imageSrc: '/images/studio-library.jpg',
       imageAlt: 'Library Studio - Your organized swipe file',
       highlighted: false,
-      demo: <UGCScriptDemo />,
+      demo: <LibraryDemo />,
     },
     {
       badge: 'SPY MODE',

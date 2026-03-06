@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'FoxAdBox - Transformez les pubs de vos concurrents en campagnes gagnantes',
-  description: 'FoxAdBox analyse les publicités photos et vidéos de vos concurrents, génère des prompts Midjourney et des scripts vidéo adaptés à VOTRE produit.',
-  keywords: 'analyse publicitaire, IA, extension chrome, marketing, spy ads, concurrent, midjourney, script video',
+  title: 'FoxAdBox - Turn Competitor Ads Into Your Next Winning Campaign',
+  description: 'FoxAdBox reverse-engineers any photo or video ad you see online. It reveals the hidden psychology, creative secrets, and exact techniques that make it convert — then adapts everything to YOUR product.',
+  keywords: 'ad analysis, AI, chrome extension, marketing, spy ads, competitor, midjourney, video script, UGC',
   openGraph: {
-    title: 'FoxAdBox - Analyse publicitaire avec IA',
-    description: 'Transformez les pubs de vos concurrents en votre prochaine campagne gagnante',
+    title: 'FoxAdBox - AI-Powered Ad Analysis',
+    description: 'Turn competitor ads into your next winning campaign',
     type: 'website',
   },
 }
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <body className="min-h-screen bg-dark">
         {children}
       </body>

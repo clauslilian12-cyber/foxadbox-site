@@ -2,40 +2,13 @@
 
 import { useRef, useEffect, useState } from 'react'
 
-const notifications = [
-  {
-    dot: '#ef4444',
-    dotLabel: 'NEW',
-    brand: 'RHODE',
-    action: 'just launched 3 new ads',
-    platform: 'Facebook',
-    time: '2 min ago',
-    delay: 600,
-  },
-  {
-    dot: '#eab308',
-    dotLabel: '',
-    brand: '900.care',
-    action: 'changed its main creative',
-    platform: 'Instagram',
-    time: '15 min ago',
-    delay: 1200,
-  },
-  {
-    dot: '#22c55e',
-    dotLabel: '',
-    brand: 'Glossier',
-    action: 'testing a new video hook',
-    platform: 'TikTok',
-    time: '1h ago',
-    delay: 1800,
-  },
-]
+const navIcons = ['🖼️', '🎬', '🕵️', '📚', '🎯']
 
-const stats = [
-  { value: '3', label: 'competitors tracked' },
-  { value: '24', label: 'active ads' },
-  { value: '2', label: 'new today' },
+const competitors = [
+  { name: 'RHODE', color: '#e53e6d', badge: '🌐 Multi-plateforme', badgeBg: '#dbeafe', badgeColor: '#2563eb', count: 3, delay: 400 },
+  { name: '900.care', color: '#00d4b4', badge: '', badgeBg: '', badgeColor: '', count: 5, delay: 600 },
+  { name: 'Sephora', color: '#f59e0b', badge: '', badgeBg: '', badgeColor: '', count: 12, delay: 800 },
+  { name: 'Glossier', color: '#7c5cfc', badge: '', badgeBg: '', badgeColor: '', count: 8, delay: 1000 },
 ]
 
 export default function AdTrackerDemo() {
@@ -52,94 +25,127 @@ export default function AdTrackerDemo() {
           observer.disconnect()
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     )
     observer.observe(el)
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div ref={ref} className="rounded-xl overflow-hidden border border-dark-400" style={{ background: '#0d0f2a' }}>
-      <div className="p-5">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-5">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Competitor Alerts</span>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#00F5D4', animation: 'waitlist-pulse 2s infinite' }} />
-            <span className="text-[10px] font-medium" style={{ color: '#00F5D4' }}>Live</span>
+    <div
+      ref={ref}
+      className="transition-all duration-700"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.98)',
+      }}
+    >
+      <div className="rounded-2xl overflow-hidden relative" style={{ height: 480, background: '#080b1a', border: '1px solid #1e2758' }}>
+        <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #00e5be, transparent)' }} />
+
+        {/* Chrome bar */}
+        <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: '#10142e' }}>
+          <div className="flex gap-1.5">
+            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#ff5f57' }} />
+            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#febc2e' }} />
+            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#28c840' }} />
+          </div>
+          <div className="flex-1 mx-4 px-3 py-1 rounded-md text-[10px] text-center" style={{ background: '#080b1a', color: '#7985b0' }}>
+            chrome-extension://foxadbox/ad-tracker
           </div>
         </div>
 
-        {/* Notification cards */}
-        <div className="space-y-3 mb-5">
-          {notifications.map((n, i) => (
-            <div
-              key={i}
-              className="rounded-lg p-3.5 transition-all duration-600"
-              style={{
-                background: '#141838',
-                border: '1px solid #1e2450',
-                opacity: visible ? 1 : 0,
-                transform: visible ? 'translateY(0)' : 'translateY(-20px)',
-                transitionDelay: `${n.delay}ms`,
-              }}
-            >
-              <div className="flex items-start gap-3">
-                {/* Colored dot */}
-                <div className="flex flex-col items-center gap-1 pt-0.5">
-                  <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: n.dot, boxShadow: `0 0 8px ${n.dot}40` }} />
-                  {n.dotLabel && (
-                    <span className="text-[8px] font-bold" style={{ color: n.dot }}>{n.dotLabel}</span>
-                  )}
-                </div>
+        <div className="flex" style={{ height: 'calc(100% - 38px)' }}>
+          {/* Sidebar */}
+          <div className="flex flex-col items-center py-3 gap-1" style={{ width: 54, background: '#1a2257' }}>
+            <div className="text-lg mb-3">🦊</div>
+            {navIcons.map((icon, i) => (
+              <div
+                key={i}
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-sm cursor-default"
+                style={{
+                  background: i === 4 ? 'rgba(0,228,190,0.15)' : 'transparent',
+                  border: i === 4 ? '1px solid rgba(0,228,190,0.3)' : '1px solid transparent',
+                }}
+              >
+                {icon}
+              </div>
+            ))}
+            <div className="mt-auto text-sm">⚙️</div>
+          </div>
 
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm text-gray-200 leading-relaxed">
-                    <span className="font-semibold text-white">{n.brand}</span>
-                    {' '}{n.action}
-                  </p>
-                  <div className="flex items-center gap-2 mt-1.5">
-                    <span className="text-[10px] text-gray-500">{n.platform}</span>
-                    <span className="text-[10px] text-gray-600">&middot;</span>
-                    <span className="text-[10px] text-gray-500">{n.time}</span>
-                  </div>
-                </div>
+          {/* Content */}
+          <div className="flex-1 flex flex-col overflow-hidden" style={{ background: '#f5f7ff' }}>
+            <div className="flex items-center justify-between px-4 py-2" style={{ borderBottom: '1px solid #e2e6f3' }}>
+              <span className="text-[11px] font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>FoxAdBox</span>
+              <span className="text-[9px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,212,180,0.1)', color: '#00d4b4', border: '1px solid rgba(0,212,180,0.2)' }}>✨ Gratuit</span>
+            </div>
 
-                {/* CTA */}
-                <button
-                  className="text-[10px] font-medium whitespace-nowrap px-2.5 py-1 rounded-md flex-shrink-0"
-                  style={{
-                    color: '#00F5D4',
-                    background: 'rgba(0,245,212,0.08)',
-                    border: '1px solid rgba(0,245,212,0.15)',
-                  }}
-                >
-                  View analysis &rarr;
+            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3" style={{ scrollbarWidth: 'none' }}>
+              {/* Header row */}
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="text-sm font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>🎯 Ad Tracker</div>
+                  <div className="text-[10px] mt-0.5" style={{ color: '#7985b0' }}>Surveille et analyse tes concurrents</div>
+                </div>
+                <button className="text-[9px] font-semibold text-white px-3 py-1.5 rounded-lg flex-shrink-0" style={{ background: 'linear-gradient(135deg, #00d4b4, #00b89c)' }}>
+                  + Ajouter un concurrent
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Dashboard stats */}
-        <div
-          className="grid grid-cols-3 gap-3 transition-all duration-700"
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(10px)',
-            transitionDelay: '2400ms',
-          }}
-        >
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="rounded-lg p-3 text-center"
-              style={{ background: '#141838', border: '1px solid #1e2450' }}
-            >
-              <div className="text-lg font-bold text-white">{s.value}</div>
-              <div className="text-[10px] text-gray-500 mt-0.5">{s.label}</div>
+              {/* Competitor items */}
+              <div className="space-y-2">
+                {competitors.map((c, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg overflow-hidden flex items-center transition-all duration-500"
+                    style={{
+                      background: '#fff',
+                      border: '1px solid #e2e6f3',
+                      opacity: visible ? 1 : 0,
+                      transform: visible ? 'translateY(0)' : 'translateY(16px)',
+                      transitionDelay: `${c.delay}ms`,
+                    }}
+                  >
+                    {/* Color bar left */}
+                    <div className="w-1 self-stretch flex-shrink-0" style={{ background: c.color }} />
+
+                    <div className="flex-1 flex items-center px-3 py-3 gap-3">
+                      {/* Avatar */}
+                      <div
+                        className="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold text-white flex-shrink-0"
+                        style={{ background: c.color }}
+                      >
+                        {c.name[0]}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] font-bold" style={{ color: '#1a2257' }}>{c.name}</span>
+                          {c.badge && (
+                            <span className="text-[8px] px-1.5 py-0.5 rounded font-medium" style={{ background: c.badgeBg, color: c.badgeColor }}>
+                              {c.badge}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Count circle */}
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0"
+                        style={{ background: `${c.color}15`, color: c.color }}
+                      >
+                        {c.count}
+                      </div>
+
+                      {/* Arrow */}
+                      <span className="text-lg" style={{ color: '#c0c8e0' }}>›</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

@@ -2,42 +2,26 @@
 
 import { useRef, useEffect, useState } from 'react'
 
+const navIcons = ['🖼️', '🎬', '🕵️', '📚', '🎯']
+
 const promptParts = [
-  { text: 'luxury skincare serum', type: 'keyword' },
-  { text: ', ', type: 'plain' },
-  { text: 'glass bottle on marble surface', type: 'subject' },
-  { text: ', ', type: 'plain' },
-  { text: 'soft pink and gold tones', type: 'style' },
-  { text: ', ', type: 'plain' },
-  { text: 'studio lighting', type: 'subject' },
-  { text: ', ', type: 'plain' },
-  { text: 'product photography', type: 'keyword' },
-  { text: ', ', type: 'plain' },
-  { text: 'ultra detailed', type: 'style' },
-  { text: ', ', type: 'plain' },
-  { text: 'minimalist composition', type: 'subject' },
-  { text: ' ', type: 'plain' },
-  { text: '--ar 1:1', type: 'param' },
-  { text: ' ', type: 'plain' },
-  { text: '--v 6', type: 'param' },
-  { text: ' ', type: 'plain' },
-  { text: '--style raw', type: 'param' },
+  { text: 'A high-end product shot of a ', type: 'plain' },
+  { text: '[green and yellow hair care tube]', type: 'keyword' },
+  { text: ' named "', type: 'plain' },
+  { text: 'Karma', type: 'keyword' },
+  { text: '", elegantly held by a model, warm studio lighting, soft bokeh background, ', type: 'plain' },
+  { text: '[beauty campaign aesthetic]', type: 'style' },
+  { text: ', inspired by close-up lip texture technique, ', type: 'plain' },
+  { text: '[--ar 1:1 --style raw --v 6.1]', type: 'param' },
 ]
 
-const fullPrompt = promptParts.map((p) => p.text).join('')
-
-const badges = [
-  { label: 'Pro product photo', delay: 400 },
-  { label: '1:1 Instagram', delay: 600 },
-  { label: 'Luxury style', delay: 800 },
-]
+const fullPrompt = promptParts.map(p => p.text).join('')
 
 const colorMap: Record<string, string> = {
-  keyword: '#00F5D4',
-  subject: '#e2e8f0',
-  style: '#8b5cf6',
-  param: '#60a5fa',
-  plain: '#8892b0',
+  keyword: '#00d4b4',
+  style: '#d4a3ff',
+  param: '#7dc7ff',
+  plain: '#c8cfe8',
 }
 
 export default function SpyModeDemo() {
@@ -56,7 +40,7 @@ export default function SpyModeDemo() {
           observer.disconnect()
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.25 }
     )
     observer.observe(el)
     return () => observer.disconnect()
@@ -66,7 +50,7 @@ export default function SpyModeDemo() {
     if (!visible) return
     const delay = setTimeout(() => {
       const interval = setInterval(() => {
-        setCharIndex((prev) => {
+        setCharIndex(prev => {
           if (prev >= fullPrompt.length) {
             clearInterval(interval)
             setTypingDone(true)
@@ -74,9 +58,9 @@ export default function SpyModeDemo() {
           }
           return prev + 1
         })
-      }, 28)
+      }, 22)
       return () => clearInterval(interval)
-    }, 800)
+    }, 1200)
     return () => clearTimeout(delay)
   }, [visible])
 
@@ -91,9 +75,7 @@ export default function SpyModeDemo() {
       const visibleEnd = Math.min(partEnd, charIndex)
       const visibleText = part.text.substring(0, visibleEnd - partStart)
       elements.push(
-        <span key={i} style={{ color: colorMap[part.type] }}>
-          {visibleText}
-        </span>
+        <span key={i} style={{ color: colorMap[part.type] }}>{visibleText}</span>
       )
       cursor = partEnd
     }
@@ -101,120 +83,142 @@ export default function SpyModeDemo() {
   }
 
   return (
-    <div ref={ref} className="rounded-xl overflow-hidden border border-dark-400" style={{ background: '#0d0f2a' }}>
-      <div className="grid grid-cols-[1fr_auto_1fr] gap-0 items-stretch min-h-[280px]">
-        {/* Left — competitor ad */}
-        <div className="p-4 flex flex-col">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-3">Competitor ad</span>
-          <div
-            className="flex-1 rounded-lg overflow-hidden transition-all duration-700"
-            style={{
-              background: '#f0f2f5',
-              opacity: visible ? 1 : 0,
-              transform: visible ? 'translateX(0)' : 'translateX(-20px)',
-            }}
-          >
-            {/* Mini ad */}
-            <div
-              className="w-full"
-              style={{
-                aspectRatio: '1/1',
-                background: 'linear-gradient(135deg, #fce4ec, #f3e5f5)',
-              }}
-            >
-              <div className="flex items-center justify-center h-full">
-                <div className="text-center">
-                  <div className="w-10 h-12 mx-auto rounded mb-1.5" style={{ background: 'linear-gradient(180deg, #e1bee7, #ce93d8)' }} />
-                  <div className="text-[9px] font-bold text-gray-600">GLOW SERUM</div>
+    <div
+      ref={ref}
+      className="transition-all duration-700"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.98)',
+      }}
+    >
+      <div className="rounded-2xl overflow-hidden relative" style={{ height: 480, background: '#080b1a', border: '1px solid #1e2758' }}>
+        <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #00e5be, transparent)' }} />
+
+        {/* Chrome bar */}
+        <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: '#10142e' }}>
+          <div className="flex gap-1.5">
+            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#ff5f57' }} />
+            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#febc2e' }} />
+            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#28c840' }} />
+          </div>
+          <div className="flex-1 mx-4 px-3 py-1 rounded-md text-[10px] text-center" style={{ background: '#080b1a', color: '#7985b0' }}>
+            chrome-extension://foxadbox/spy-mode
+          </div>
+        </div>
+
+        <div className="flex" style={{ height: 'calc(100% - 38px)' }}>
+          {/* Sidebar */}
+          <div className="flex flex-col items-center py-3 gap-1" style={{ width: 54, background: '#1a2257' }}>
+            <div className="text-lg mb-3">🦊</div>
+            {navIcons.map((icon, i) => (
+              <div
+                key={i}
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-sm cursor-default"
+                style={{
+                  background: i === 2 ? 'rgba(0,228,190,0.15)' : 'transparent',
+                  border: i === 2 ? '1px solid rgba(0,228,190,0.3)' : '1px solid transparent',
+                }}
+              >
+                {icon}
+              </div>
+            ))}
+            <div className="mt-auto text-sm">⚙️</div>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 flex flex-col overflow-hidden" style={{ background: '#f5f7ff' }}>
+            <div className="flex items-center justify-between px-4 py-2" style={{ borderBottom: '1px solid #e2e6f3' }}>
+              <span className="text-[11px] font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>FoxAdBox</span>
+              <span className="text-[9px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,212,180,0.1)', color: '#00d4b4', border: '1px solid rgba(0,212,180,0.2)' }}>✨ Gratuit</span>
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2.5" style={{ scrollbarWidth: 'none' }}>
+              <div>
+                <div className="text-sm font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>🕵️ Spy Mode</div>
+                <div className="text-[10px] mt-0.5" style={{ color: '#7985b0' }}>Transforme les analyses en créatifs pour TON produit</div>
+              </div>
+
+              {/* Tabs */}
+              <div className="grid grid-cols-2 gap-1.5">
+                <div className="py-1.5 rounded-lg text-[9px] font-semibold text-white text-center" style={{ background: '#1a2257' }}>
+                  🖼️ Photo Remix
+                </div>
+                <div className="py-1.5 rounded-lg text-[9px] font-semibold text-center" style={{ color: '#7985b0', background: '#fff', border: '1px solid #e2e6f3' }}>
+                  🎬 Video Remix
                 </div>
               </div>
-            </div>
-            <div className="px-2.5 py-2">
-              <div className="text-[10px] font-semibold text-gray-700">Radiant skin in 7 days</div>
-              <div className="mt-1.5 w-full py-1 rounded text-center text-[9px] font-semibold text-white" style={{ background: '#1877F2' }}>
-                Shop Now
+
+              <div className="text-[10px] font-bold" style={{ color: '#1a2257' }}>🎨 Générateur de Prompt (Photo Remix)</div>
+
+              {/* Analysis textarea */}
+              <div>
+                <div className="text-[9px] font-semibold mb-1" style={{ color: '#7985b0' }}>📋 Analyse de la photo concurrente</div>
+                <div className="rounded-lg p-2 text-[9px] leading-relaxed" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#4a5578' }}>
+                  Close-up lip/face shot with luxury serum — curiosity hook via texture + immediate result promise.
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Center arrow */}
-        <div className="flex items-center justify-center px-2">
-          <div
-            className="flex flex-col items-center gap-1.5 transition-all duration-700"
-            style={{
-              opacity: visible ? 1 : 0,
-              transitionDelay: '500ms',
-            }}
-          >
-            <span className="text-[9px] text-gray-500 font-medium whitespace-nowrap">AI adapts</span>
-            <div
-              className="text-accent text-lg"
-              style={{
-                animation: visible ? 'pulse-arrow 2s ease-in-out infinite' : 'none',
-              }}
-            >
-              &rarr;
-            </div>
-          </div>
-        </div>
+              {/* Product textarea */}
+              <div>
+                <div className="text-[9px] font-semibold mb-1" style={{ color: '#7985b0' }}>🎁 TON produit</div>
+                <div className="rounded-lg p-2 text-[9px]" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#a0a8c0' }}>
+                  name = karma, color green and yellow
+                </div>
+              </div>
 
-        {/* Right — generated prompt */}
-        <div className="p-4 flex flex-col">
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-3">Your Midjourney prompt</span>
-          <div
-            className="flex-1 rounded-lg p-3 transition-all duration-700"
-            style={{
-              background: '#141838',
-              border: '1px solid #1e2450',
-              opacity: visible ? 1 : 0,
-              transform: visible ? 'translateX(0)' : 'translateX(20px)',
-              transitionDelay: '400ms',
-            }}
-          >
-            <div className="font-mono text-[11px] leading-relaxed min-h-[80px]">
-              <span style={{ color: '#8892b0' }}>/imagine </span>
-              {renderTypedPrompt()}
-              {!typingDone && visible && (
-                <span
-                  className="inline-block w-[2px] h-3 ml-0.5 align-middle"
-                  style={{
-                    background: '#00F5D4',
-                    animation: 'blink-cursor 1s step-end infinite',
-                  }}
-                />
-              )}
-            </div>
+              {/* Selects */}
+              <div className="grid grid-cols-2 gap-2">
+                <div>
+                  <div className="text-[8px] font-semibold mb-0.5" style={{ color: '#7985b0' }}>Style</div>
+                  <div className="rounded-lg px-2 py-1.5 text-[9px]" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#1a2257' }}>
+                    Photo produit pro ▾
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[8px] font-semibold mb-0.5" style={{ color: '#7985b0' }}>Ratio</div>
+                  <div className="rounded-lg px-2 py-1.5 text-[9px]" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#1a2257' }}>
+                    1:1 (Instagram) ▾
+                  </div>
+                </div>
+              </div>
 
-            {/* Badges */}
-            <div className="flex flex-wrap gap-1.5 mt-4">
-              {badges.map((b, i) => (
-                <span
-                  key={i}
-                  className="text-[9px] px-2 py-0.5 rounded-full font-medium transition-all duration-500"
-                  style={{
-                    background: 'rgba(0,245,212,0.1)',
-                    color: '#00F5D4',
-                    border: '1px solid rgba(0,245,212,0.2)',
-                    opacity: typingDone ? 1 : 0,
-                    transform: typingDone ? 'translateY(0) scale(1)' : 'translateY(5px) scale(0.9)',
-                    transitionDelay: `${b.delay}ms`,
-                  }}
-                >
-                  {b.label}
-                </span>
-              ))}
+              {/* Generate button */}
+              <button className="w-full py-2 rounded-lg text-[10px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #1a2257, #2a3377)' }}>
+                ✨ Générer le Prompt Midjourney
+              </button>
+
+              {/* Prompt result */}
+              <div
+                className="rounded-lg overflow-hidden transition-all duration-500"
+                style={{
+                  background: '#0d1035',
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? 'translateY(0)' : 'translateY(12px)',
+                  transitionDelay: '600ms',
+                }}
+              >
+                <div className="flex items-center justify-between px-3 py-1.5" style={{ borderBottom: '1px solid #1e2758' }}>
+                  <span className="text-[9px] font-semibold text-white">🎨 Ton Prompt Midjourney</span>
+                  <span className="text-[8px] px-1.5 py-0.5 rounded" style={{ background: 'rgba(0,212,180,0.1)', color: '#00d4b480' }}>📋 Copier</span>
+                </div>
+                <div className="px-3 py-2 font-mono text-[10px] leading-relaxed min-h-[48px]">
+                  <span style={{ color: '#7985b0' }}>/imagine prompt: </span>
+                  {renderTypedPrompt()}
+                  {!typingDone && visible && (
+                    <span
+                      className="inline-block w-[2px] h-3 ml-0.5 align-middle"
+                      style={{ background: '#00d4b4', animation: 'spy-blink 1s step-end infinite' }}
+                    />
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes pulse-arrow {
-          0%, 100% { transform: translateX(0); opacity: 0.6; }
-          50% { transform: translateX(4px); opacity: 1; }
-        }
-        @keyframes blink-cursor {
+        @keyframes spy-blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
         }

@@ -59,54 +59,36 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
 
         {/* Ad image */}
         <div className="relative" style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #1a2257, #0d1035)' }}>
-          {/* Cyan glow behind bottle */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div style={{ width: 140, height: 140, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,229,190,0.08) 0%, transparent 70%)' }} />
-          </div>
-
-          {/* Sparkles */}
-          <div className="absolute" style={{ top: '18%', left: '30%', width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.6 }} />
-          <div className="absolute" style={{ top: '35%', right: '28%', width: 2, height: 2, borderRadius: '50%', background: '#00e5be', opacity: 0.4 }} />
-          <div className="absolute" style={{ bottom: '25%', left: '35%', width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
-
-          {/* Serum bottle */}
+          {/* Serum bottle with glow + sparkles */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative" style={{ width: 52 }}>
+            <div className="relative" style={{ width: 52, height: 110 }}>
+              {/* Glow behind */}
+              <div className="absolute" style={{ inset: -20, background: 'radial-gradient(ellipse, rgba(0,229,190,0.07) 0%, transparent 70%)', zIndex: -1 }} />
+              {/* Sparkles */}
+              <div className="absolute" style={{ top: '15%', right: -8, width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
+              <div className="absolute" style={{ top: '40%', left: -10, width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
+              <div className="absolute" style={{ bottom: '25%', right: -6, width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
               {/* Pump stem */}
-              <div className="mx-auto" style={{ width: 2, height: 10, background: '#1a1a1a' }} />
+              <div className="absolute" style={{ top: -28, left: '50%', transform: 'translateX(-50%)', width: 2, height: 12, background: '#2a2a3e' }} />
               {/* Pump cap */}
-              <div className="mx-auto" style={{ width: 20, height: 18, background: '#2a2a2a', borderRadius: '4px 4px 2px 2px' }} />
+              <div className="absolute" style={{ top: -18, left: '50%', transform: 'translateX(-50%)', width: 18, height: 16, background: '#1e1e2e', borderRadius: '4px 4px 2px 2px' }} />
               {/* Bottle body */}
               <div
                 className="relative overflow-hidden"
                 style={{
                   width: 52,
                   height: 110,
-                  background: 'linear-gradient(135deg, #f5f2ee, #e8e4df)',
+                  background: 'linear-gradient(160deg, #f5f2ee 0%, #e8e4df 60%, #d8d4cf 100%)',
                   borderRadius: '12px 12px 6px 6px',
                   boxShadow: '0 12px 32px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.1)',
                 }}
               >
                 {/* Glass reflection */}
-                <div
-                  className="absolute"
-                  style={{
-                    top: 8,
-                    left: 8,
-                    width: 8,
-                    height: 80,
-                    background: 'rgba(255,255,255,0.4)',
-                    borderRadius: 4,
-                  }}
-                />
+                <div className="absolute" style={{ left: 8, top: 12, width: 7, height: '60%', background: 'linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%)', borderRadius: 4 }} />
                 {/* Label */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <div style={{ fontSize: 6, fontWeight: 800, letterSpacing: 2, color: '#1a2257', lineHeight: 1.3 }}>
-                    SÉRUM
-                  </div>
-                  <div style={{ fontSize: 5, color: '#7985b0', marginTop: 2 }}>
-                    No.01
-                  </div>
+                <div className="absolute text-center" style={{ bottom: 20, width: '100%' }}>
+                  <div style={{ fontSize: 5.5, fontWeight: 800, letterSpacing: 2.5, color: '#2a2a5a' }}>SÉRUM</div>
+                  <div style={{ fontSize: 4.5, color: '#7985b0', marginTop: 1 }}>No.01</div>
                 </div>
               </div>
             </div>

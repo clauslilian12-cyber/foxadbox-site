@@ -58,12 +58,57 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
         </div>
 
         {/* Ad image */}
-        <div className="relative" style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #fce4ec, #f3e5f5, #e8eaf6)' }}>
+        <div className="relative" style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #1a2257, #0d1035)' }}>
+          {/* Cyan glow behind bottle */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div style={{ width: 140, height: 140, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,229,190,0.08) 0%, transparent 70%)' }} />
+          </div>
+
+          {/* Sparkles */}
+          <div className="absolute" style={{ top: '18%', left: '30%', width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.6 }} />
+          <div className="absolute" style={{ top: '35%', right: '28%', width: 2, height: 2, borderRadius: '50%', background: '#00e5be', opacity: 0.4 }} />
+          <div className="absolute" style={{ bottom: '25%', left: '35%', width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
+
+          {/* Serum bottle */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-14 h-18 mx-auto rounded-lg mb-2" style={{ width: 56, height: 72, background: 'linear-gradient(180deg, #e1bee7, #ce93d8)', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }} />
-              <div className="text-[10px] font-bold text-gray-600 tracking-wider">GLOW SERUM</div>
-              <div className="text-[8px] text-gray-400 mt-0.5">Results in 7 days</div>
+            <div className="relative" style={{ width: 52 }}>
+              {/* Pump stem */}
+              <div className="mx-auto" style={{ width: 2, height: 10, background: '#1a1a1a' }} />
+              {/* Pump cap */}
+              <div className="mx-auto" style={{ width: 20, height: 18, background: '#2a2a2a', borderRadius: '4px 4px 2px 2px' }} />
+              {/* Bottle body */}
+              <div
+                className="relative overflow-hidden"
+                style={{
+                  width: 52,
+                  height: 110,
+                  background: 'linear-gradient(135deg, #f5f2ee, #e8e4df)',
+                  borderRadius: '12px 12px 6px 6px',
+                  boxShadow: '0 12px 32px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.1)',
+                }}
+              >
+                {/* Glass reflection */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: 8,
+                    left: 8,
+                    width: 8,
+                    height: 80,
+                    background: 'rgba(255,255,255,0.4)',
+                    borderRadius: 4,
+                  }}
+                />
+                {/* Label */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div style={{ fontSize: 6, fontWeight: 800, letterSpacing: 2, color: '#1a2257', lineHeight: 1.3 }}>
+                    SÉRUM
+                  </div>
+                  <div style={{ fontSize: 5, color: '#7985b0', marginTop: 2 }}>
+                    No.01
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

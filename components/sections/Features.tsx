@@ -21,7 +21,7 @@ export default function Features() {
       imageSrc: '/images/studio-photo.jpg',
       imageAlt: 'Photo Studio - Capture and analyze any ad',
       highlighted: false,
-      demo: <PhotoStudioDemo />,
+      demo: <PhotoStudioDemo isActive={true} />,
     },
     {
       badge: 'VIDEO STUDIO',
@@ -35,7 +35,7 @@ export default function Features() {
       imageSrc: '/images/studio-upload.jpg',
       imageAlt: 'Video Studio - Frame-by-frame video analysis',
       highlighted: false,
-      demo: <VideoStudioDemo />,
+      demo: <VideoStudioDemo isActive={true} />,
     },
     {
       badge: 'LIBRARY STUDIO',
@@ -49,7 +49,7 @@ export default function Features() {
       imageSrc: '/images/studio-library.jpg',
       imageAlt: 'Library Studio - Your organized swipe file',
       highlighted: false,
-      demo: <LibraryDemo />,
+      demo: <LibraryDemo isActive={true} />,
     },
     {
       badge: 'SPY MODE',
@@ -63,7 +63,7 @@ export default function Features() {
       imageSrc: '/images/spy-mode.jpg',
       imageAlt: 'Spy Mode - Turn competitor ads into your content',
       highlighted: true,
-      demo: <SpyModeDemo />,
+      demo: <SpyModeDemo isActive={true} />,
     },
     {
       badge: 'AD TRACKER',
@@ -77,7 +77,7 @@ export default function Features() {
       imageSrc: '/images/ad-tracker.jpg',
       imageAlt: 'Ad Tracker - Monitor competitors on autopilot',
       highlighted: false,
-      demo: <AdTrackerDemo />,
+      demo: <AdTrackerDemo isActive={true} />,
     },
   ]
 

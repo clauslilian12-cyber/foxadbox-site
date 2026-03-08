@@ -2,52 +2,56 @@
 
 import { useRef, useEffect, useState } from 'react'
 
-const navIcons = ['🖼️', '🎬', '🕵️', '📚', '🎯']
-
 const promptParts = [
-  { text: 'A high-end product shot of a ', type: 'plain' },
-  { text: '[green and yellow hair care tube]', type: 'keyword' },
-  { text: ' named "', type: 'plain' },
-  { text: 'Karma', type: 'keyword' },
-  { text: '", elegantly held by a model, warm studio lighting, soft bokeh background, ', type: 'plain' },
-  { text: '[beauty campaign aesthetic]', type: 'style' },
-  { text: ', inspired by close-up lip texture technique, ', type: 'plain' },
-  { text: '[--ar 1:1 --style raw --v 6.1]', type: 'param' },
+  { text: 'luxury skincare serum', type: 'subject' },
+  { text: ', ', type: 'plain' },
+  { text: 'glass bottle on marble', type: 'subject' },
+  { text: ', ', type: 'plain' },
+  { text: 'soft pink and gold tones', type: 'style' },
+  { text: ', ', type: 'plain' },
+  { text: 'studio lighting', type: 'subject' },
+  { text: ', ', type: 'plain' },
+  { text: 'product photography', type: 'subject' },
+  { text: ', ', type: 'plain' },
+  { text: 'ultra detailed', type: 'style' },
+  { text: ' ', type: 'plain' },
+  { text: '--ar 1:1', type: 'param' },
+  { text: ' ', type: 'plain' },
+  { text: '--v 6', type: 'param' },
+  { text: ' ', type: 'plain' },
+  { text: '--style raw', type: 'param' },
 ]
 
 const fullPrompt = promptParts.map(p => p.text).join('')
 
+const pills = [
+  { label: 'Midjourney', delay: 300 },
+  { label: 'UGC Script', delay: 500 },
+  { label: 'AI Video', delay: 700 },
+]
+
 const colorMap: Record<string, string> = {
-  keyword: '#00d4b4',
+  subject: '#00e5be',
   style: '#d4a3ff',
   param: '#7dc7ff',
-  plain: '#c8cfe8',
+  plain: '#7985b0',
 }
 
-export default function SpyModeDemo() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+export default function SpyModeDemo({ isActive }: { isActive: boolean }) {
+  const hasPlayed = useRef(false)
+  const [started, setStarted] = useState(false)
   const [charIndex, setCharIndex] = useState(0)
   const [typingDone, setTypingDone] = useState(false)
 
   useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.25 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+    if (isActive && !hasPlayed.current) {
+      hasPlayed.current = true
+      setTimeout(() => setStarted(true), 200)
+    }
+  }, [isActive])
 
   useEffect(() => {
-    if (!visible) return
+    if (!started) return
     const delay = setTimeout(() => {
       const interval = setInterval(() => {
         setCharIndex(prev => {
@@ -58,11 +62,11 @@ export default function SpyModeDemo() {
           }
           return prev + 1
         })
-      }, 22)
+      }, 25)
       return () => clearInterval(interval)
-    }, 1200)
+    }, 600)
     return () => clearTimeout(delay)
-  }, [visible])
+  }, [started])
 
   const renderTypedPrompt = () => {
     let cursor = 0
@@ -84,140 +88,108 @@ export default function SpyModeDemo() {
 
   return (
     <div
-      ref={ref}
-      className="transition-all duration-700"
+      className="rounded-[20px] overflow-hidden"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.98)',
+        background: '#0d1035',
+        border: '1px solid #1e2758',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
+        padding: '24px',
       }}
     >
-      <div className="rounded-2xl overflow-hidden relative" style={{ height: 480, background: '#080b1a', border: '1px solid #1e2758' }}>
-        <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #00e5be, transparent)' }} />
-
-        {/* Chrome bar */}
-        <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: '#10142e' }}>
-          <div className="flex gap-1.5">
-            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#ff5f57' }} />
-            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#febc2e' }} />
-            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#28c840' }} />
-          </div>
-          <div className="flex-1 mx-4 px-3 py-1 rounded-md text-[10px] text-center" style={{ background: '#080b1a', color: '#7985b0' }}>
-            chrome-extension://foxadbox/spy-mode
+      <div className="grid grid-cols-[1fr_auto_1fr] gap-0 items-stretch" style={{ minHeight: 240 }}>
+        {/* Left — competitor ad */}
+        <div className="flex flex-col">
+          <span className="text-[9px] font-medium uppercase tracking-wider mb-2.5" style={{ color: '#7985b0' }}>Pub concurrente</span>
+          <div
+            className="flex-1 rounded-xl overflow-hidden transition-all"
+            style={{
+              background: '#fff',
+              opacity: started ? 1 : 0,
+              transform: started ? 'translateX(0)' : 'translateX(-16px)',
+              transitionDuration: '600ms',
+            }}
+          >
+            <div style={{ aspectRatio: '1/1', background: 'linear-gradient(135deg, #fce4ec, #f3e5f5)' }}>
+              <div className="flex items-center justify-center h-full">
+                <div className="text-center">
+                  <div className="w-10 h-12 mx-auto rounded" style={{ background: 'linear-gradient(180deg, #e1bee7, #ce93d8)' }} />
+                  <div className="text-[8px] font-bold text-gray-500 mt-1.5 tracking-wider">SERUM</div>
+                </div>
+              </div>
+            </div>
+            <div className="px-2.5 py-2">
+              <div className="text-[9px] font-semibold text-gray-700">Radiant skin in 7 days</div>
+              <div className="text-[8px] text-gray-400 mt-0.5">Results guaranteed</div>
+            </div>
           </div>
         </div>
 
-        <div className="flex" style={{ height: 'calc(100% - 38px)' }}>
-          {/* Sidebar */}
-          <div className="flex flex-col items-center py-3 gap-1" style={{ width: 54, background: '#1a2257' }}>
-            <div className="text-lg mb-3">🦊</div>
-            {navIcons.map((icon, i) => (
-              <div
-                key={i}
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-sm cursor-default"
-                style={{
-                  background: i === 2 ? 'rgba(0,228,190,0.15)' : 'transparent',
-                  border: i === 2 ? '1px solid rgba(0,228,190,0.3)' : '1px solid transparent',
-                }}
-              >
-                {icon}
-              </div>
-            ))}
-            <div className="mt-auto text-sm">⚙️</div>
+        {/* Center arrow */}
+        <div className="flex items-center justify-center px-4">
+          <div
+            className="transition-opacity"
+            style={{ opacity: started ? 1 : 0, transitionDuration: '500ms', transitionDelay: '300ms' }}
+          >
+            <div className="text-xl" style={{ color: '#00e5be', animation: started ? 'spy-pulse 2s ease-in-out infinite' : 'none' }}>
+              &rarr;
+            </div>
           </div>
+        </div>
 
-          {/* Content */}
-          <div className="flex-1 flex flex-col overflow-hidden" style={{ background: '#f5f7ff' }}>
-            <div className="flex items-center justify-between px-4 py-2" style={{ borderBottom: '1px solid #e2e6f3' }}>
-              <span className="text-[11px] font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>FoxAdBox</span>
-              <span className="text-[9px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,212,180,0.1)', color: '#00d4b4', border: '1px solid rgba(0,212,180,0.2)' }}>✨ Gratuit</span>
+        {/* Right — prompt output */}
+        <div className="flex flex-col">
+          <span className="text-[9px] font-medium uppercase tracking-wider mb-2.5" style={{ color: '#7985b0' }}>Output</span>
+          <div
+            className="flex-1 rounded-xl p-3 transition-all"
+            style={{
+              background: '#080b1a',
+              border: '1px solid #1e2758',
+              opacity: started ? 1 : 0,
+              transform: started ? 'translateX(0)' : 'translateX(16px)',
+              transitionDuration: '600ms',
+              transitionDelay: '300ms',
+            }}
+          >
+            <div className="font-mono text-[10px] leading-relaxed min-h-[80px]">
+              <span style={{ color: '#7985b0' }}>/imagine </span>
+              {renderTypedPrompt()}
+              {!typingDone && started && (
+                <span
+                  className="inline-block w-[2px] h-3 ml-0.5 align-middle"
+                  style={{ background: '#00e5be', animation: 'spy-blink 1s step-end infinite' }}
+                />
+              )}
             </div>
 
-            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2.5" style={{ scrollbarWidth: 'none' }}>
-              <div>
-                <div className="text-sm font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>🕵️ Spy Mode</div>
-                <div className="text-[10px] mt-0.5" style={{ color: '#7985b0' }}>Transforme les analyses en créatifs pour TON produit</div>
-              </div>
-
-              {/* Tabs */}
-              <div className="grid grid-cols-2 gap-1.5">
-                <div className="py-1.5 rounded-lg text-[9px] font-semibold text-white text-center" style={{ background: '#1a2257' }}>
-                  🖼️ Photo Remix
-                </div>
-                <div className="py-1.5 rounded-lg text-[9px] font-semibold text-center" style={{ color: '#7985b0', background: '#fff', border: '1px solid #e2e6f3' }}>
-                  🎬 Video Remix
-                </div>
-              </div>
-
-              <div className="text-[10px] font-bold" style={{ color: '#1a2257' }}>🎨 Générateur de Prompt (Photo Remix)</div>
-
-              {/* Analysis textarea */}
-              <div>
-                <div className="text-[9px] font-semibold mb-1" style={{ color: '#7985b0' }}>📋 Analyse de la photo concurrente</div>
-                <div className="rounded-lg p-2 text-[9px] leading-relaxed" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#4a5578' }}>
-                  Close-up lip/face shot with luxury serum — curiosity hook via texture + immediate result promise.
-                </div>
-              </div>
-
-              {/* Product textarea */}
-              <div>
-                <div className="text-[9px] font-semibold mb-1" style={{ color: '#7985b0' }}>🎁 TON produit</div>
-                <div className="rounded-lg p-2 text-[9px]" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#a0a8c0' }}>
-                  name = karma, color green and yellow
-                </div>
-              </div>
-
-              {/* Selects */}
-              <div className="grid grid-cols-2 gap-2">
-                <div>
-                  <div className="text-[8px] font-semibold mb-0.5" style={{ color: '#7985b0' }}>Style</div>
-                  <div className="rounded-lg px-2 py-1.5 text-[9px]" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#1a2257' }}>
-                    Photo produit pro ▾
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[8px] font-semibold mb-0.5" style={{ color: '#7985b0' }}>Ratio</div>
-                  <div className="rounded-lg px-2 py-1.5 text-[9px]" style={{ background: '#fff', border: '1px solid #e2e6f3', color: '#1a2257' }}>
-                    1:1 (Instagram) ▾
-                  </div>
-                </div>
-              </div>
-
-              {/* Generate button */}
-              <button className="w-full py-2 rounded-lg text-[10px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #1a2257, #2a3377)' }}>
-                ✨ Générer le Prompt Midjourney
-              </button>
-
-              {/* Prompt result */}
-              <div
-                className="rounded-lg overflow-hidden transition-all duration-500"
-                style={{
-                  background: '#0d1035',
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(12px)',
-                  transitionDelay: '600ms',
-                }}
-              >
-                <div className="flex items-center justify-between px-3 py-1.5" style={{ borderBottom: '1px solid #1e2758' }}>
-                  <span className="text-[9px] font-semibold text-white">🎨 Ton Prompt Midjourney</span>
-                  <span className="text-[8px] px-1.5 py-0.5 rounded" style={{ background: 'rgba(0,212,180,0.1)', color: '#00d4b480' }}>📋 Copier</span>
-                </div>
-                <div className="px-3 py-2 font-mono text-[10px] leading-relaxed min-h-[48px]">
-                  <span style={{ color: '#7985b0' }}>/imagine prompt: </span>
-                  {renderTypedPrompt()}
-                  {!typingDone && visible && (
-                    <span
-                      className="inline-block w-[2px] h-3 ml-0.5 align-middle"
-                      style={{ background: '#00d4b4', animation: 'spy-blink 1s step-end infinite' }}
-                    />
-                  )}
-                </div>
-              </div>
+            {/* Output pills */}
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {pills.map((p, i) => (
+                <span
+                  key={i}
+                  className="text-[9px] px-2 py-0.5 rounded-full font-medium transition-all"
+                  style={{
+                    background: 'rgba(0,229,190,0.08)',
+                    color: '#00e5be',
+                    border: '1px solid rgba(0,229,190,0.2)',
+                    opacity: typingDone ? 1 : 0,
+                    transform: typingDone ? 'translateY(0) scale(1)' : 'translateY(4px) scale(0.9)',
+                    transitionDuration: '400ms',
+                    transitionDelay: `${p.delay}ms`,
+                  }}
+                >
+                  {p.label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       <style>{`
+        @keyframes spy-pulse {
+          0%, 100% { transform: translateX(0); opacity: 0.5; }
+          50% { transform: translateX(5px); opacity: 1; }
+        }
         @keyframes spy-blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }

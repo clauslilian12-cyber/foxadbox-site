@@ -2,195 +2,166 @@
 
 import { useRef, useEffect, useState } from 'react'
 
-const navIcons = ['🖼️', '🎬', '🕵️', '📚', '🎯']
+const markers = [
+  { position: 15, label: 'Hook', color: '#f59e0b' },
+  { position: 38, label: 'Emotion', color: '#7c5cfc' },
+  { position: 65, label: 'Re-hook', color: '#ef4444' },
+  { position: 80, label: 'CTA', color: '#00e5be' },
+]
 
-export default function VideoStudioDemo() {
-  const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-  const [vprog, setVprog] = useState(0)
-  const [scoreWidth, setScoreWidth] = useState(0)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.25 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+export default function VideoStudioDemo({ isActive }: { isActive: boolean }) {
+  const hasPlayed = useRef(false)
+  const [progress, setProgress] = useState(0)
+  const [showSummary, setShowSummary] = useState(false)
 
   useEffect(() => {
-    if (!visible) return
-    const interval = setInterval(() => {
-      setVprog(prev => {
-        if (prev >= 65) { clearInterval(interval); return 65 }
-        return prev + 0.5
-      })
-    }, 10)
-    return () => clearInterval(interval)
-  }, [visible])
-
-  useEffect(() => {
-    if (!visible) return
-    const timer = setTimeout(() => {
+    if (isActive && !hasPlayed.current) {
+      hasPlayed.current = true
+      let current = 0
       const interval = setInterval(() => {
-        setScoreWidth(prev => {
-          if (prev >= 80) { clearInterval(interval); return 80 }
-          return prev + 1
-        })
-      }, 12)
+        current += 0.4
+        setProgress(current)
+        if (current >= 80) {
+          clearInterval(interval)
+          setTimeout(() => setShowSummary(true), 400)
+        }
+      }, 25)
       return () => clearInterval(interval)
-    }, 900)
-    return () => clearTimeout(timer)
-  }, [visible])
+    }
+  }, [isActive])
+
+  const formatTime = (pct: number) => {
+    const s = Math.floor((pct / 100) * 30)
+    return `0:${String(s).padStart(2, '0')}`
+  }
 
   return (
     <div
-      ref={ref}
-      className="transition-all duration-700"
+      className="rounded-[20px] overflow-hidden relative"
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0) scale(1)' : 'translateY(24px) scale(0.98)',
+        background: '#0d1035',
+        border: '1px solid #1e2758',
+        boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
       }}
     >
-      <div className="rounded-2xl overflow-hidden relative" style={{ height: 480, background: '#080b1a', border: '1px solid #1e2758' }}>
-        <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #00e5be, transparent)' }} />
+      <div className="flex">
+        {/* Player */}
+        <div className="flex-1">
+          {/* Video area */}
+          <div className="relative" style={{ aspectRatio: '16/9', background: 'linear-gradient(135deg, #080b1a, #141838)' }}>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                {/* Play button */}
+                <div
+                  className="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center"
+                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
+                >
+                  <div className="w-0 h-0 ml-1" style={{ borderTop: '8px solid transparent', borderBottom: '8px solid transparent', borderLeft: '13px solid rgba(255,255,255,0.6)' }} />
+                </div>
+                <div className="text-[10px] font-mono" style={{ color: '#7985b0' }}>
+                  {formatTime(progress)} / 0:30
+                </div>
+              </div>
+            </div>
 
-        {/* Chrome bar */}
-        <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: '#10142e' }}>
-          <div className="flex gap-1.5">
-            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#ff5f57' }} />
-            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#febc2e' }} />
-            <div className="w-[10px] h-[10px] rounded-full" style={{ background: '#28c840' }} />
+            {/* Scan line */}
+            {progress > 0 && progress < 80 && (
+              <div
+                className="absolute left-0 right-0 h-px pointer-events-none"
+                style={{
+                  top: `${(progress % 40) * 2.5}%`,
+                  background: 'linear-gradient(90deg, transparent, rgba(0,229,190,0.1), transparent)',
+                }}
+              />
+            )}
           </div>
-          <div className="flex-1 mx-4 px-3 py-1 rounded-md text-[10px] text-center" style={{ background: '#080b1a', color: '#7985b0' }}>
-            chrome-extension://foxadbox/studio-media
+
+          {/* Timeline area */}
+          <div className="relative px-5 pt-8 pb-5">
+            {/* Marker pills above timeline */}
+            <div className="relative h-7 mb-2">
+              {markers.map((m, i) => (
+                <div
+                  key={i}
+                  className="absolute bottom-0 transition-all"
+                  style={{
+                    left: `${m.position}%`,
+                    transform: 'translateX(-50%)',
+                    opacity: progress >= m.position ? 1 : 0,
+                    transitionDuration: '400ms',
+                  }}
+                >
+                  <div
+                    className="px-2.5 py-1 rounded-md whitespace-nowrap transition-transform"
+                    style={{
+                      background: `${m.color}15`,
+                      border: `1px solid ${m.color}30`,
+                      transform: progress >= m.position ? 'scale(1)' : 'scale(0.8)',
+                      transitionDuration: '300ms',
+                    }}
+                  >
+                    <span className="text-[10px] font-semibold" style={{ color: m.color }}>{m.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Progress bar */}
+            <div className="h-1.5 rounded-full overflow-hidden" style={{ background: '#1e2758' }}>
+              <div
+                className="h-full rounded-full"
+                style={{
+                  width: `${progress}%`,
+                  background: 'linear-gradient(90deg, #00e5be, #7c5cfc)',
+                  transition: 'width 25ms linear',
+                }}
+              />
+            </div>
+
+            {/* Dots on timeline */}
+            {markers.map((m, i) => (
+              <div
+                key={`d${i}`}
+                className="absolute transition-opacity"
+                style={{
+                  left: `calc(1.25rem + (100% - 2.5rem) * ${m.position / 100})`,
+                  bottom: '18px',
+                  transform: 'translateX(-50%)',
+                  opacity: progress >= m.position ? 1 : 0,
+                  transitionDuration: '300ms',
+                }}
+              >
+                <div className="w-2 h-2 rounded-full" style={{ background: m.color, boxShadow: `0 0 6px ${m.color}50` }} />
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="flex" style={{ height: 'calc(100% - 38px)' }}>
-          {/* Sidebar */}
-          <div className="flex flex-col items-center py-3 gap-1" style={{ width: 54, background: '#1a2257' }}>
-            <div className="text-lg mb-3">🦊</div>
-            {navIcons.map((icon, i) => (
-              <div
-                key={i}
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-sm cursor-default"
-                style={{
-                  background: i === 1 ? 'rgba(0,228,190,0.15)' : 'transparent',
-                  border: i === 1 ? '1px solid rgba(0,228,190,0.3)' : '1px solid transparent',
-                }}
-              >
-                {icon}
-              </div>
-            ))}
-            <div className="mt-auto text-sm">⚙️</div>
-          </div>
-
-          {/* Content */}
-          <div className="flex-1 flex flex-col overflow-hidden" style={{ background: '#f5f7ff' }}>
-            <div className="flex items-center justify-between px-4 py-2" style={{ borderBottom: '1px solid #e2e6f3' }}>
-              <span className="text-[11px] font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>FoxAdBox</span>
-              <span className="text-[9px] px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,212,180,0.1)', color: '#00d4b4', border: '1px solid rgba(0,212,180,0.2)' }}>✨ Gratuit</span>
+        {/* Summary panel */}
+        <div
+          className="flex flex-col justify-center py-6 transition-all overflow-hidden hidden md:flex"
+          style={{
+            width: showSummary ? 170 : 0,
+            paddingLeft: showSummary ? 20 : 0,
+            paddingRight: showSummary ? 20 : 0,
+            opacity: showSummary ? 1 : 0,
+            borderLeft: showSummary ? '1px solid #1e2758' : 'none',
+            transitionDuration: '600ms',
+            transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        >
+          <div className="space-y-3 whitespace-nowrap">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#00e5be' }} />
+              <span className="text-[11px]" style={{ color: '#eef1ff' }}>4 techniques</span>
             </div>
-
-            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3" style={{ scrollbarWidth: 'none' }}>
-              <div>
-                <div className="text-sm font-bold" style={{ color: '#1a2257', fontFamily: 'Syne, sans-serif' }}>🎬 Studio Media</div>
-                <div className="text-[10px] mt-0.5" style={{ color: '#7985b0' }}>Analyse tes images et vidéos publicitaires</div>
-              </div>
-
-              <button className="w-full py-1.5 rounded-lg text-[10px] font-semibold text-white" style={{ background: '#1a2257' }}>
-                🔄 Nouvelle analyse
-              </button>
-
-              {/* Video card */}
-              <div className="rounded-lg overflow-hidden" style={{ border: '1px solid #e2e6f3' }}>
-                <div className="relative flex items-center justify-center" style={{ height: 80, background: 'linear-gradient(135deg, #1a2257, #2a3377)' }}>
-                  <div className="absolute right-3 top-3 text-xl">🌸</div>
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)' }}>
-                    <div className="w-0 h-0 ml-0.5" style={{ borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '8px solid white' }} />
-                  </div>
-                </div>
-                <div className="px-2.5 py-1.5" style={{ background: '#fff' }}>
-                  <div className="h-1.5 rounded-full overflow-hidden mb-1" style={{ background: '#e2e6f3' }}>
-                    <div className="h-full rounded-full" style={{ width: `${vprog}%`, background: 'linear-gradient(90deg, #00d4b4, #8b5cf6)', transition: 'width 0.05s linear' }} />
-                  </div>
-                  <div className="text-[9px]" style={{ color: '#7985b0' }}>📹 Vidéo uploadée — 06/03/2026</div>
-                </div>
-              </div>
-
-              {/* Video result card */}
-              <div
-                className="rounded-lg p-3 space-y-2 transition-all duration-500"
-                style={{
-                  background: '#fff',
-                  border: '1px solid #e2e6f3',
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(12px)',
-                  transitionDelay: '400ms',
-                }}
-              >
-                <div>
-                  <div className="text-[10px] font-bold" style={{ color: '#1a2257' }}>🎯 Hook d&apos;ouverture</div>
-                  <div className="text-[9px] mt-0.5" style={{ color: '#4a5578' }}>Pattern interrupt visuel dans les 1.5 premières secondes — capte l&apos;attention immédiatement.</div>
-                </div>
-                <div className="h-px" style={{ background: '#e2e6f3' }} />
-                <div>
-                  <div className="text-[10px] font-bold" style={{ color: '#1a2257' }}>📖 Structure narrative</div>
-                  <div className="text-[9px] mt-0.5" style={{ color: '#4a5578' }}>Storytelling before/after classique avec montée émotionnelle progressive.</div>
-                </div>
-                <div className="h-px" style={{ background: '#e2e6f3' }} />
-                <div>
-                  <div className="text-[10px] font-bold" style={{ color: '#1a2257' }}>👥 Cible identifiée</div>
-                  <div className="text-[9px] mt-0.5" style={{ color: '#4a5578' }}>Femmes 25-35, intérêt skincare premium, sensible au social proof.</div>
-                </div>
-              </div>
-
-              {/* Score card */}
-              <div
-                className="rounded-lg p-3 transition-all duration-500"
-                style={{
-                  background: '#1a2257',
-                  opacity: visible ? 1 : 0,
-                  transform: visible ? 'translateY(0)' : 'translateY(12px)',
-                  transitionDelay: '900ms',
-                }}
-              >
-                <div className="text-[10px] font-semibold text-white mb-1">📊 Score Global</div>
-                <div className="text-2xl font-bold text-white" style={{ fontFamily: 'Syne, sans-serif' }}>8/10</div>
-                <div className="h-2 rounded-full mt-2 overflow-hidden" style={{ background: '#0d1035' }}>
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${scoreWidth}%`,
-                      background: 'linear-gradient(90deg, #00d4b4, #8b5cf6)',
-                      transition: 'width 0.05s linear',
-                    }}
-                  />
-                </div>
-                <div className="flex flex-wrap gap-1 mt-2">
-                  {['✅ Hook efficace', '✅ Storytelling fort', '⚠️ Réduire la durée'].map((chip, i) => (
-                    <span
-                      key={i}
-                      className="text-[8px] px-1.5 py-0.5 rounded-full"
-                      style={{
-                        background: chip.startsWith('✅') ? 'rgba(34,197,94,0.15)' : 'rgba(245,158,11,0.15)',
-                        color: chip.startsWith('✅') ? '#22c55e' : '#f59e0b',
-                      }}
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#f59e0b' }} />
+              <span className="text-[11px]" style={{ color: '#eef1ff' }}>Score 8/10</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#7c5cfc' }} />
+              <span className="text-[11px]" style={{ color: '#eef1ff' }}>Hook fort</span>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useCallback, ReactNode } from 'react'
+import { useState, useRef, useCallback, ComponentType } from 'react'
 import PhotoStudioDemo from '@/components/studios/PhotoStudioDemo'
 import VideoStudioDemo from '@/components/studios/VideoStudioDemo'
 import SpyModeDemo from '@/components/studios/SpyModeDemo'
@@ -14,7 +14,7 @@ interface Slide {
   description: string
   tags: string[]
   highlighted: boolean
-  demo: ReactNode
+  Demo: ComponentType<{ isActive: boolean }>
 }
 
 const slides: Slide[] = [
@@ -25,7 +25,7 @@ const slides: Slide[] = [
     description: 'Capture any ad directly from your browser. FoxAdBox instantly analyzes the creative strategy, emotional triggers, and audience positioning.',
     tags: ['AI Analysis', 'Visual Hook', 'Psychology', 'One-Click'],
     highlighted: false,
-    demo: <PhotoStudioDemo />,
+    Demo: PhotoStudioDemo,
   },
   {
     number: '02',
@@ -34,7 +34,7 @@ const slides: Slide[] = [
     description: 'Frame-by-frame AI analysis reveals hook structure, pacing breakdown, persuasion techniques and full script reconstruction.',
     tags: ['Frame Analysis', 'Hook Detection', 'Storytelling', 'Script'],
     highlighted: false,
-    demo: <VideoStudioDemo />,
+    Demo: VideoStudioDemo,
   },
   {
     number: '03',
@@ -43,7 +43,7 @@ const slides: Slide[] = [
     description: 'Generate Midjourney prompts, video scripts, UGC briefs and complete creative briefs — all adapted to YOUR product.',
     tags: ['Midjourney', 'UGC Script', 'Creative Brief', 'AI Remix'],
     highlighted: true,
-    demo: <SpyModeDemo />,
+    Demo: SpyModeDemo,
   },
   {
     number: '04',
@@ -52,7 +52,7 @@ const slides: Slide[] = [
     description: 'Save unlimited analyses, organize by collections, and export everything to Notion with one click.',
     tags: ['Unlimited Saves', 'Collections', 'Notion Export', 'History'],
     highlighted: false,
-    demo: <LibraryDemo />,
+    Demo: LibraryDemo,
   },
   {
     number: '05',
@@ -61,7 +61,7 @@ const slides: Slide[] = [
     description: 'Track multiple competitors at once. Get alerted when they launch new ads, change creatives or test new hooks.',
     tags: ['Live Alerts', 'Multi-Brand', 'Auto-Sync', 'Competitive Intel'],
     highlighted: false,
-    demo: <AdTrackerDemo />,
+    Demo: AdTrackerDemo,
   },
 ]
 
@@ -85,8 +85,6 @@ export default function FeaturesCarousel() {
       else if (diff < 0 && active > 0) setActive(prev => prev - 1)
     }
   }, [active])
-
-  const slide = slides[active]
 
   return (
     <section id="features" className="bg-dark-100" style={{ borderTop: '1px solid #1e2758', borderBottom: '1px solid #1e2758' }}>
@@ -112,11 +110,9 @@ export default function FeaturesCarousel() {
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Slides */}
           {slides.map((s, i) => (
             <div
               key={i}
-              className="transition-all duration-400 ease-in-out"
               style={{
                 position: i === active ? 'relative' : 'absolute',
                 top: 0,
@@ -129,6 +125,7 @@ export default function FeaturesCarousel() {
                     ? 'translateX(-60px)'
                     : 'translateX(60px)',
                 pointerEvents: i === active ? 'auto' : 'none',
+                transitionProperty: 'opacity, transform',
                 transitionDuration: '400ms',
                 transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
               }}
@@ -136,7 +133,6 @@ export default function FeaturesCarousel() {
               <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-center">
                 {/* Text */}
                 <div className="space-y-5">
-                  {/* Numbered pill */}
                   <div className="flex items-center gap-3">
                     <span
                       className="text-[11px] font-bold px-2.5 py-1 rounded-full"
@@ -156,17 +152,14 @@ export default function FeaturesCarousel() {
                     </span>
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
                     {s.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                     {s.description}
                   </p>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 pt-2">
                     {s.tags.map((tag, j) => (
                       <span
@@ -183,7 +176,6 @@ export default function FeaturesCarousel() {
                     ))}
                   </div>
 
-                  {/* CTA */}
                   <div className="pt-2">
                     <a
                       href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
@@ -198,7 +190,7 @@ export default function FeaturesCarousel() {
 
                 {/* Demo */}
                 <div className="relative">
-                  {s.demo}
+                  <s.Demo isActive={i === active} />
                   {s.highlighted && (
                     <div className="absolute -inset-4 bg-accent/5 rounded-3xl blur-2xl -z-10" />
                   )}
@@ -210,7 +202,6 @@ export default function FeaturesCarousel() {
 
         {/* Navigation */}
         <div className="flex items-center justify-center gap-4 mt-10">
-          {/* Left arrow */}
           <button
             onClick={() => goTo(active - 1)}
             className="w-12 h-12 rounded-full flex items-center justify-center text-lg transition-all duration-200"
@@ -227,7 +218,6 @@ export default function FeaturesCarousel() {
             &lsaquo;
           </button>
 
-          {/* Dots */}
           <div className="flex items-center gap-2.5">
             {slides.map((_, i) => (
               <button
@@ -246,7 +236,6 @@ export default function FeaturesCarousel() {
             ))}
           </div>
 
-          {/* Right arrow */}
           <button
             onClick={() => goTo(active + 1)}
             className="w-12 h-12 rounded-full flex items-center justify-center text-lg transition-all duration-200"

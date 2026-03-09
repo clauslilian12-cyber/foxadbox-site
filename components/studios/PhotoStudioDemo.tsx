@@ -59,11 +59,13 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
 
         {/* Ad image */}
         <div className="relative" style={{ aspectRatio: '16/10' }}>
-          <img src="/images/rhode.jpg" alt="Rhode ad" className="absolute inset-0 w-full h-full object-cover object-center-top" />
+          <img src="/images/rhode.jpg" alt="Rhode ad" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
+          {/* Dark overlay */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 100%)', zIndex: 1 }} />
 
           {/* Analysis tags overlay */}
           {tags.map((tag, i) => (
-            <div key={i} className="absolute z-10" style={{ left: tag.x, top: tag.y }}>
+            <div key={i} className="absolute" style={{ left: tag.x, top: tag.y, zIndex: 2 }}>
               {/* Dashed line */}
               <svg className="absolute" style={{ width: 60, height: 30, top: '50%', left: '100%', overflow: 'visible' }}>
                 <line
@@ -78,11 +80,13 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
 
               {/* Tag pill */}
               <div
-                className="flex items-center gap-1.5 px-2.5 py-1 rounded-md whitespace-nowrap transition-all"
+                className="flex items-center gap-1.5 whitespace-nowrap transition-all"
                 style={{
-                  background: `${tag.color}18`,
-                  border: `1px solid ${tag.color}40`,
-                  backdropFilter: 'blur(8px)',
+                  background: 'rgba(0,0,0,0.75)',
+                  backdropFilter: 'blur(4px)',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  padding: '5px 12px',
+                  borderRadius: 20,
                   opacity: started ? 1 : 0,
                   transform: started ? 'scale(1) translateY(0)' : 'scale(0.7) translateY(8px)',
                   transitionDuration: '500ms',
@@ -90,7 +94,7 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
                 }}
               >
                 <div className="w-1.5 h-1.5 rounded-full" style={{ background: tag.color }} />
-                <span className="text-[10px] font-semibold" style={{ color: tag.color }}>{tag.label}</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 11, letterSpacing: 0.5, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>{tag.label}</span>
               </div>
             </div>
           ))}

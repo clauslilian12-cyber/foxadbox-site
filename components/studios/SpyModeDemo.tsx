@@ -210,6 +210,14 @@ export default function SpyModeDemo({ isActive }: { isActive: boolean }) {
         </div>
       </div>
 
+      {/* Studio label */}
+      <div className="text-center mt-4">
+        <span className="text-[12px] uppercase" style={{ letterSpacing: 2, fontFamily: 'Syne, sans-serif' }}>
+          <span className="font-bold" style={{ color: '#00e5be' }}>03</span>
+          <span style={{ color: '#7985b0' }}> — SPY MODE · CREATIVE GENERATOR</span>
+        </span>
+      </div>
+
       <style>{`
         @keyframes spy-pulse {
           0%, 100% { transform: translateX(0); opacity: 0.5; }

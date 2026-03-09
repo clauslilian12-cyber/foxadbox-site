@@ -133,6 +133,14 @@ export default function AdTrackerDemo({ isActive }: { isActive: boolean }) {
         </div>
       </div>
 
+      {/* Studio label */}
+      <div className="text-center mt-4">
+        <span className="text-[12px] uppercase" style={{ letterSpacing: 2, fontFamily: 'Syne, sans-serif' }}>
+          <span className="font-bold" style={{ color: '#00e5be' }}>05</span>
+          <span style={{ color: '#7985b0' }}> — AD TRACKER · LIVE MONITOR</span>
+        </span>
+      </div>
+
       <style>{`
         @keyframes tracker-dot {
           0%, 100% { opacity: 1; transform: scale(1); }

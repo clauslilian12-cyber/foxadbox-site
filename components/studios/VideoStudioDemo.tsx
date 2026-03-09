@@ -48,8 +48,11 @@ export default function VideoStudioDemo({ isActive }: { isActive: boolean }) {
         {/* Player */}
         <div className="flex-1">
           {/* Video area */}
-          <div className="relative" style={{ aspectRatio: '16/9', background: 'linear-gradient(135deg, #080b1a, #141838)' }}>
-            <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative" style={{ aspectRatio: '16/9', background: '#080b1a' }}>
+            <img src="/images/rhode-video.png" alt="Rhode video" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.85 }} />
+            {/* Dark gradient overlay */}
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%)' }} />
+            <div className="absolute inset-0 flex items-center justify-center z-10">
               <div className="text-center">
                 {/* Play button */}
                 <div
@@ -165,6 +168,14 @@ export default function VideoStudioDemo({ isActive }: { isActive: boolean }) {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Studio label */}
+      <div className="text-center px-5 pb-4">
+        <span className="text-[12px] uppercase" style={{ letterSpacing: 2, fontFamily: 'Syne, sans-serif' }}>
+          <span className="font-bold" style={{ color: '#00e5be' }}>02</span>
+          <span style={{ color: '#7985b0' }}> — STUDIO MEDIA · VIDEO ANALYSIS</span>
+        </span>
       </div>
     </div>
   )

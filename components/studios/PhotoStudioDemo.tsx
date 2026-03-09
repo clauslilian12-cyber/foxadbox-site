@@ -58,41 +58,8 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
         </div>
 
         {/* Ad image */}
-        <div className="relative" style={{ aspectRatio: '16/10', background: 'linear-gradient(135deg, #1a2257, #0d1035)' }}>
-          {/* Serum bottle with glow + sparkles */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative" style={{ width: 52, height: 110 }}>
-              {/* Glow behind */}
-              <div className="absolute" style={{ inset: -20, background: 'radial-gradient(ellipse, rgba(0,229,190,0.07) 0%, transparent 70%)', zIndex: -1 }} />
-              {/* Sparkles */}
-              <div className="absolute" style={{ top: '15%', right: -8, width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
-              <div className="absolute" style={{ top: '40%', left: -10, width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
-              <div className="absolute" style={{ bottom: '25%', right: -6, width: 3, height: 3, borderRadius: '50%', background: '#00e5be', opacity: 0.5 }} />
-              {/* Pump stem */}
-              <div className="absolute" style={{ top: -28, left: '50%', transform: 'translateX(-50%)', width: 2, height: 12, background: '#2a2a3e' }} />
-              {/* Pump cap */}
-              <div className="absolute" style={{ top: -18, left: '50%', transform: 'translateX(-50%)', width: 18, height: 16, background: '#1e1e2e', borderRadius: '4px 4px 2px 2px' }} />
-              {/* Bottle body */}
-              <div
-                className="relative overflow-hidden"
-                style={{
-                  width: 52,
-                  height: 110,
-                  background: 'linear-gradient(160deg, #f5f2ee 0%, #e8e4df 60%, #d8d4cf 100%)',
-                  borderRadius: '12px 12px 6px 6px',
-                  boxShadow: '0 12px 32px rgba(0,0,0,0.25), 0 4px 8px rgba(0,0,0,0.1)',
-                }}
-              >
-                {/* Glass reflection */}
-                <div className="absolute" style={{ left: 8, top: 12, width: 7, height: '60%', background: 'linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 100%)', borderRadius: 4 }} />
-                {/* Label */}
-                <div className="absolute text-center" style={{ bottom: 20, width: '100%' }}>
-                  <div style={{ fontSize: 5.5, fontWeight: 800, letterSpacing: 2.5, color: '#2a2a5a' }}>SÉRUM</div>
-                  <div style={{ fontSize: 4.5, color: '#7985b0', marginTop: 1 }}>No.01</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="relative" style={{ aspectRatio: '16/10' }}>
+          <img src="/images/rhode.jpg" alt="Rhode ad" className="absolute inset-0 w-full h-full object-cover object-center-top" />
 
           {/* Analysis tags overlay */}
           {tags.map((tag, i) => (
@@ -144,18 +111,19 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
         </div>
       </div>
 
-      {/* Score badge */}
+      {/* Studio label */}
       <div
-        className="absolute bottom-6 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-xl transition-all"
+        className="text-center mt-4 transition-all"
         style={{
-          background: '#00e5be',
-          boxShadow: '0 4px 20px rgba(0,229,190,0.3)',
           opacity: showScore ? 1 : 0,
-          transform: showScore ? 'translateY(0) scale(1)' : 'translateY(12px) scale(0.9)',
+          transform: showScore ? 'translateY(0)' : 'translateY(8px)',
           transitionDuration: '500ms',
         }}
       >
-        <span className="text-xl font-bold" style={{ color: '#0d1035', fontFamily: 'Syne, sans-serif' }}>8 / 10</span>
+        <span className="text-[12px] uppercase" style={{ letterSpacing: 2, fontFamily: 'Syne, sans-serif' }}>
+          <span className="font-bold" style={{ color: '#00e5be' }}>01</span>
+          <span style={{ color: '#7985b0' }}> — STUDIO PHOTO · AD ANALYSIS</span>
+        </span>
       </div>
     </div>
   )

@@ -127,6 +127,14 @@ export default function LibraryDemo({ isActive }: { isActive: boolean }) {
         </div>
       </div>
 
+      {/* Studio label */}
+      <div className="text-center mt-4">
+        <span className="text-[12px] uppercase" style={{ letterSpacing: 2, fontFamily: 'Syne, sans-serif' }}>
+          <span className="font-bold" style={{ color: '#00e5be' }}>04</span>
+          <span style={{ color: '#7985b0' }}> — LIBRARY · SWIPE FILE</span>
+        </span>
+      </div>
+
       <style>{`
         @keyframes lib-pulse {
           0%, 100% { opacity: 1; }

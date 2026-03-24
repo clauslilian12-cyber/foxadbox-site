@@ -178,7 +178,7 @@ export default function FeaturesCarousel() {
 
                   <div className="pt-2">
                     <a
-                      href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+                      href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/oinffmhjjhgihpgpibegdlmelcoohlih"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-primary inline-block"

@@ -46,7 +46,7 @@ export default function FeatureShowcase({
         {/* CTA Button */}
         <div className="flex flex-wrap gap-4">
           <a
-            href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/fibdbjcgmdhjiaddkdhhakjpingbmakh"
+            href="https://chromewebstore.google.com/detail/foxadbox-ai-marketing-ass/oinffmhjjhgihpgpibegdlmelcoohlih"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

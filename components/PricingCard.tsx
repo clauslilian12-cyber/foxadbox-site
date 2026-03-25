@@ -36,7 +36,7 @@ export default function PricingCard({
       {popular && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
           <span className="bg-accent text-dark text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">
-            Popular
+            Populaire
           </span>
         </div>
       )}

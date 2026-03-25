@@ -22,7 +22,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-dark-300 border border-dark-400 rounded-full px-4 py-2 mb-8"
           >
             <Chrome size={16} className="text-accent" />
-            <span className="text-sm text-gray-300">Chrome Extension — Now in Beta</span>
+            <span className="text-sm text-gray-300">Extension Chrome — Disponible en bêta</span>
           </motion.div>
 
           {/* Title */}
@@ -32,8 +32,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance"
           >
-            Your Competitors&apos; Ads Are Telling You Everything.{' '}
-            <span className="gradient-text">Are You Listening?</span>
+            Les pubs de vos concurrents disent tout.{' '}
+            <span className="gradient-text">Vous écoutez ?</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -43,7 +43,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto text-balance"
           >
-            FoxAdBox reverse-engineers any photo or video ad you see online. It reveals the hidden psychology, the creative secrets, and the exact techniques that make it convert — then instantly adapts everything to <span className="text-white font-medium">YOUR</span> product, <span className="text-white font-medium">YOUR</span> brand, and <span className="text-white font-medium">YOUR</span> creative workflow.
+            FoxAdBox décortique n&apos;importe quelle pub photo ou vidéo que vous voyez en ligne. Il révèle la psychologie cachée, les secrets créatifs et les techniques exactes qui font convertir — puis adapte tout instantanément à <span className="text-white font-medium">VOTRE</span> produit, <span className="text-white font-medium">VOTRE</span> marque et <span className="text-white font-medium">VOTRE</span> workflow créatif.
           </motion.p>
 
           {/* CTAs */}
@@ -60,13 +60,13 @@ export default function Hero() {
               className="btn-primary text-base px-8 py-4 gap-2 animate-glow"
             >
               <Chrome size={20} />
-              Install for Free on Chrome →
+              Installer gratuitement sur Chrome →
             </a>
             <a
               href="#features"
               className="btn-secondary text-base px-8 py-4 gap-2"
             >
-              See How It Works ↓
+              Voir comment ça marche ↓
               <ArrowRight size={18} />
             </a>
           </motion.div>

@@ -4,21 +4,21 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    quote: "I used to spend 2 hours a day on Ad Library. Now I generate full creative briefs in under 10 minutes. FoxAdBox completely changed how I work.",
+    quote: "Je passais 2 heures par jour sur Ad Library. Maintenant je génère des briefs créatifs complets en moins de 10 minutes. FoxAdBox a complètement changé ma façon de travailler.",
     name: "Thomas R.",
-    role: "Freelance Media Buyer",
+    role: "Media Buyer freelance",
     avatar: "TR",
   },
   {
-    quote: "Spy Mode is insane. I describe my product, and I get a perfect Midjourney prompt in 30 seconds. My creatives have never performed this well.",
+    quote: "Le mode Spy est dingue. Je décris mon produit et j\u2019obtiens un prompt Midjourney parfait en 30 secondes. Mes créas n\u2019ont jamais autant performé.",
     name: "Julie M.",
-    role: "E-commerce Founder",
+    role: "Fondatrice e-commerce",
     avatar: "JM",
   },
   {
-    quote: "We track all our clients' competitors with Ad Tracker. The Notion export transformed our agency workflow. It's non-negotiable now.",
+    quote: "On suit tous les concurrents de nos clients avec Ad Tracker. L\u2019export Notion a transformé le workflow de notre agence. C\u2019est devenu indispensable.",
     name: "Kevin L.",
-    role: "Marketing Agency CEO",
+    role: "CEO d\u2019agence marketing",
     avatar: "KL",
   },
 ]
@@ -35,13 +35,13 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <span className="text-accent text-sm font-medium mb-4 block tracking-wider uppercase">
-            Testimonials
+            Témoignages
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            They turned competitive intelligence into results
+            Ils ont transformé la veille concurrentielle en résultats
           </h2>
           <p className="text-gray-400 text-lg">
-            Join the marketers saving hours every day
+            Rejoignez les marketeurs qui gagnent des heures chaque jour
           </p>
         </motion.div>
 

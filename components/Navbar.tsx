@@ -17,8 +17,8 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { href: '#features', label: 'Features' },
-    { href: '#pricing', label: 'Pricing' },
+    { href: '#features', label: 'Fonctionnalités' },
+    { href: '#pricing', label: 'Tarifs' },
     { href: '#faq', label: 'FAQ' },
   ]
 
@@ -59,7 +59,7 @@ export default function Navbar() {
               className="btn-primary gap-2"
             >
               <Chrome size={18} />
-              Install Extension
+              Installer l&apos;extension
             </a>
           </div>
 
@@ -93,7 +93,7 @@ export default function Navbar() {
                 className="btn-primary gap-2 mt-2"
               >
                 <Chrome size={18} />
-                Install Extension
+                Installer l&apos;extension
               </a>
             </div>
           </div>

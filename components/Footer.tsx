@@ -3,16 +3,16 @@ import Link from 'next/link'
 export default function Footer() {
   const footerLinks = {
     product: [
-      { label: 'Features', href: '#features' },
-      { label: 'Pricing', href: '#pricing' },
+      { label: 'Fonctionnalités', href: '#features' },
+      { label: 'Tarifs', href: '#pricing' },
     ],
     resources: [
       { label: 'Guide', href: '#' },
       { label: 'Support', href: '#' },
     ],
     legal: [
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
+      { label: 'Politique de confidentialité', href: '/privacy' },
+      { label: 'Conditions d\u2019utilisation', href: '/terms' },
     ],
   }
 
@@ -26,13 +26,13 @@ export default function Footer() {
               <span className="text-white">FoxAdBox</span>
             </Link>
             <p className="text-gray-500 text-sm">
-              The Chrome extension that turns competitive analysis into marketing action.
+              L&apos;extension Chrome qui transforme la veille concurrentielle en action marketing.
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Product</h4>
+            <h4 className="text-white font-semibold mb-4">Produit</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Resources</h4>
+            <h4 className="text-white font-semibold mb-4">Ressources</h4>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Legal</h4>
+            <h4 className="text-white font-semibold mb-4">Légal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
@@ -85,7 +85,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-dark-400">
           <p className="text-center text-gray-600 text-sm">
-            © 2025 FoxAdBox. All rights reserved.
+            © 2025 FoxAdBox. Tous droits réservés.
           </p>
         </div>
       </div>

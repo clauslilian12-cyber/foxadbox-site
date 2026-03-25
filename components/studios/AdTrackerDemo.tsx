@@ -6,33 +6,33 @@ const notifications = [
   {
     dotColor: '#ef4444',
     brand: 'RHODE',
-    text: '3 new ads',
+    text: '3 nouvelles pubs',
     platform: 'Facebook',
-    time: '2 min ago',
+    time: 'Il y a 2 min',
     delay: 400,
   },
   {
     dotColor: '#f59e0b',
     brand: '900.care',
-    text: 'New main creative',
+    text: 'Nouveau créatif principal',
     platform: 'Instagram',
-    time: '15 min ago',
+    time: 'Il y a 15 min',
     delay: 800,
   },
   {
     dotColor: '#22c55e',
     brand: 'Glossier',
-    text: 'New video hook',
+    text: 'Nouveau hook vidéo',
     platform: 'TikTok',
-    time: '1 hour ago',
+    time: 'Il y a 1 h',
     delay: 1200,
   },
 ]
 
 const stats = [
-  { value: '3', label: 'brands tracked' },
-  { value: '24', label: 'active ads' },
-  { value: '2', label: 'new' },
+  { value: '3', label: 'marques suivies' },
+  { value: '24', label: 'pubs actives' },
+  { value: '2', label: 'nouvelles' },
 ]
 
 export default function AdTrackerDemo({ isActive }: { isActive: boolean }) {
@@ -105,7 +105,7 @@ export default function AdTrackerDemo({ isActive }: { isActive: boolean }) {
                   border: '1px solid rgba(0,229,190,0.12)',
                 }}
               >
-                View &rarr;
+                Voir &rarr;
               </button>
             </div>
           </div>

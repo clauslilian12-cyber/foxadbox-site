@@ -113,8 +113,8 @@ export default function SpyModeDemo({ isActive }: { isActive: boolean }) {
               <img src="/images/rhode.jpg" alt="Competitor ad" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: 8 }} />
             </div>
             <div className="px-2.5 py-2">
-              <div className="text-[9px] font-semibold text-gray-700">Radiant skin in 7 days</div>
-              <div className="text-[8px] text-gray-400 mt-0.5">Results guaranteed</div>
+              <div className="text-[9px] font-semibold text-gray-700">Une peau éclatante en 7 jours</div>
+              <div className="text-[8px] text-gray-400 mt-0.5">Résultats garantis</div>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function SpyModeDemo({ isActive }: { isActive: boolean }) {
 
         {/* Right — prompt output */}
         <div className="flex flex-col">
-          <span className="text-[9px] font-medium uppercase tracking-wider mb-2.5" style={{ color: '#7985b0' }}>Output</span>
+          <span className="text-[9px] font-medium uppercase tracking-wider mb-2.5" style={{ color: '#7985b0' }}>Résultat</span>
           <div
             className="flex-1 rounded-xl p-3 transition-all"
             style={{

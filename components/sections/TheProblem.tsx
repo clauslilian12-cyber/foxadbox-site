@@ -4,19 +4,19 @@ import { motion } from 'framer-motion'
 
 const painCards = [
   {
-    title: 'Hours of manual research',
+    title: 'Des heures de recherche manuelle',
     description:
-      'Scrolling Ad Library for hours with no clear methodology or actionable output.',
+      'Scroller Ad Library pendant des heures sans méthodologie claire ni résultat concret.',
   },
   {
-    title: 'Budget wasted on testing',
+    title: 'Du budget gaspillé en tests',
     description:
-      'Spending thousands testing creatives that you could have validated by analyzing what already works.',
+      'Dépenser des milliers d\u2019euros pour tester des créas que vous auriez pu valider en analysant ce qui marche déjà.',
   },
   {
-    title: 'No system, no scale',
+    title: 'Aucun système, aucune scalabilité',
     description:
-      'Seeing great ads but having no repeatable process to extract insights and apply them to your own brand.',
+      'Voir de superbes pubs sans avoir de process reproductible pour en extraire les insights et les appliquer à votre marque.',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function TheProblem() {
             }}
             className="block mb-6 uppercase"
           >
-            SOUND FAMILIAR?
+            ÇA VOUS PARLE ?
           </motion.span>
 
           <motion.h2
@@ -47,11 +47,11 @@ export default function TheProblem() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight"
           >
-            You See a Winning Ad.
+            Vous voyez une pub qui cartonne.
             <br />
-            You Know It Works.
+            Vous savez qu&apos;elle marche.
             <br />
-            But You Have No Idea Why.
+            Mais vous ne savez pas pourquoi.
           </motion.h2>
 
           <motion.p
@@ -61,11 +61,11 @@ export default function TheProblem() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg leading-relaxed"
           >
-            Every day, your competitors are running ads that convert. You scroll
-            past them, screenshot them, save them — but you still can&apos;t
-            figure out the hook, the emotion, the exact technique that makes
-            people stop and buy. And without that knowledge, you&apos;re just
-            guessing with your budget.
+            Chaque jour, vos concurrents diffusent des pubs qui convertissent. Vous scrollez,
+            vous screenshot, vous enregistrez — mais impossible de comprendre
+            le hook, l&apos;émotion, la technique exacte qui pousse les gens
+            à s&apos;arrêter et à acheter. Et sans cette connaissance, vous ne faites
+            que deviner avec votre budget.
           </motion.p>
         </div>
 

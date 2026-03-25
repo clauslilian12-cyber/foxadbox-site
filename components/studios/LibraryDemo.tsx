@@ -8,7 +8,7 @@ const rows = [
     type: 'Photo',
     typeColor: '#2563eb',
     typeBg: '#dbeafe',
-    hook: 'Curiosity close-up',
+    hook: 'Gros plan curiosité',
     score: '8/10',
     scoreColor: '#059669',
     delay: 500,
@@ -18,7 +18,7 @@ const rows = [
     type: 'Video',
     typeColor: '#7c3aed',
     typeBg: '#ede9fe',
-    hook: 'Before / After',
+    hook: 'Avant / Après',
     score: '9/10',
     scoreColor: '#059669',
     delay: 800,
@@ -28,7 +28,7 @@ const rows = [
     type: 'Photo',
     typeColor: '#2563eb',
     typeBg: '#dbeafe',
-    hook: 'Product contrast',
+    hook: 'Contraste produit',
     score: '7/10',
     scoreColor: '#d97706',
     delay: 1100,
@@ -80,7 +80,7 @@ export default function LibraryDemo({ isActive }: { isActive: boolean }) {
             }}
           >
             <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#00e5be', animation: started ? 'lib-pulse 2s infinite' : 'none' }} />
-            <span className="text-[8px] font-medium" style={{ color: '#00a98f' }}>Synced via FoxAdBox</span>
+            <span className="text-[8px] font-medium" style={{ color: '#00a98f' }}>Synchronisé via FoxAdBox</span>
           </div>
         </div>
 

@@ -21,45 +21,45 @@ const slides: Slide[] = [
   {
     number: '01',
     badge: 'PHOTO STUDIO',
-    title: 'Decode Any Ad in One Click',
-    description: 'Capture any ad directly from your browser. FoxAdBox instantly analyzes the creative strategy, emotional triggers, and audience positioning.',
-    tags: ['AI Analysis', 'Visual Hook', 'Psychology', 'One-Click'],
+    title: 'Décryptez n\u2019importe quelle pub en un clic',
+    description: 'Capturez une pub directement depuis votre navigateur. FoxAdBox analyse instantanément la stratégie créative, les déclencheurs émotionnels et le positionnement audience.',
+    tags: ['Analyse IA', 'Hook visuel', 'Psychologie', 'Un clic'],
     highlighted: false,
     Demo: PhotoStudioDemo,
   },
   {
     number: '02',
     badge: 'VIDEO STUDIO',
-    title: 'Uncover Every Secret Inside a Video Ad',
-    description: 'Frame-by-frame AI analysis reveals hook structure, pacing breakdown, persuasion techniques and full script reconstruction.',
-    tags: ['Frame Analysis', 'Hook Detection', 'Storytelling', 'Script'],
+    title: 'Révélez tous les secrets d\u2019une pub vidéo',
+    description: 'L\u2019analyse IA image par image révèle la structure du hook, le rythme, les techniques de persuasion et reconstruit le script complet.',
+    tags: ['Analyse image', 'Détection hook', 'Storytelling', 'Script'],
     highlighted: false,
     Demo: VideoStudioDemo,
   },
   {
     number: '03',
     badge: 'SPY MODE',
-    title: 'Turn Their Ads Into Your Content',
-    description: 'Generate Midjourney prompts, video scripts, UGC briefs and complete creative briefs — all adapted to YOUR product.',
-    tags: ['Midjourney', 'UGC Script', 'Creative Brief', 'AI Remix'],
+    title: 'Transformez leurs pubs en votre contenu',
+    description: 'Générez des prompts Midjourney, des scripts vidéo, des briefs UGC et des briefs créatifs complets — le tout adapté à VOTRE produit.',
+    tags: ['Midjourney', 'Script UGC', 'Brief créatif', 'Remix IA'],
     highlighted: true,
     Demo: SpyModeDemo,
   },
   {
     number: '04',
     badge: 'LIBRARY',
-    title: 'Your Organized Swipe File, Finally',
-    description: 'Save unlimited analyses, organize by collections, and export everything to Notion with one click.',
-    tags: ['Unlimited Saves', 'Collections', 'Notion Export', 'History'],
+    title: 'Votre swipe file organisé, enfin',
+    description: 'Sauvegardez des analyses illimitées, organisez-les par collections et exportez tout vers Notion en un clic.',
+    tags: ['Sauvegardes illimitées', 'Collections', 'Export Notion', 'Historique'],
     highlighted: false,
     Demo: LibraryDemo,
   },
   {
     number: '05',
     badge: 'AD TRACKER',
-    title: 'Monitor Competitors on Autopilot',
-    description: 'Track multiple competitors at once. Get alerted when they launch new ads, change creatives or test new hooks.',
-    tags: ['Live Alerts', 'Multi-Brand', 'Auto-Sync', 'Competitive Intel'],
+    title: 'Surveillez vos concurrents en pilote automatique',
+    description: 'Suivez plusieurs concurrents à la fois. Soyez alerté quand ils lancent de nouvelles pubs, changent de créa ou testent de nouveaux hooks.',
+    tags: ['Alertes live', 'Multi-marques', 'Sync auto', 'Veille concurrentielle'],
     highlighted: false,
     Demo: AdTrackerDemo,
   },
@@ -183,7 +183,7 @@ export default function FeaturesCarousel() {
                       rel="noopener noreferrer"
                       className="btn-primary inline-block"
                     >
-                      Try for Free
+                      Essayer gratuitement
                     </a>
                   </div>
                 </div>

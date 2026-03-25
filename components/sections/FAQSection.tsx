@@ -17,28 +17,28 @@ export default function FAQSection() {
 
   const faqItems: FAQItem[] = [
     {
-      question: 'Can I cancel anytime?',
-      answer: 'Yes, no commitment. Cancel in one click from your dashboard. You keep access until the end of your billing period.',
+      question: 'Est-ce que je peux résilier à tout moment ?',
+      answer: 'Oui, sans engagement. Résiliez en un clic depuis votre dashboard. Vous gardez l\u2019accès jusqu\u2019à la fin de votre période de facturation.',
     },
     {
-      question: 'What types of ads can FoxAdBox analyze?',
-      answer: 'Any photo or video ad you see on any website — Facebook, Instagram, TikTok, YouTube, landing pages, and more. If you can see it in your browser, FoxAdBox can analyze it.',
+      question: 'Quels types de pubs FoxAdBox peut analyser ?',
+      answer: 'N\u2019importe quelle pub photo ou vidéo visible sur n\u2019importe quel site — Facebook, Instagram, TikTok, YouTube, landing pages, etc. Si vous la voyez dans votre navigateur, FoxAdBox peut l\u2019analyser.',
     },
     {
-      question: 'Does it generate prompts for AI tools like Midjourney or Runway?',
-      answer: 'Yes. Spy Mode generates Midjourney prompts for image creation, AI video prompts adapted shot by shot, and complete UGC scripts — all tailored to your specific product.',
+      question: 'Est-ce que ça génère des prompts pour Midjourney ou Runway ?',
+      answer: 'Oui. Le mode Spy génère des prompts Midjourney pour la création d\u2019images, des prompts vidéo IA adaptés plan par plan, et des scripts UGC complets — le tout adapté à votre produit.',
     },
     {
-      question: 'Is my data secure?',
-      answer: 'Absolutely. Your data is encrypted, stored in Europe, and GDPR compliant. We never access your passwords or browsing history.',
+      question: 'Mes données sont-elles sécurisées ?',
+      answer: 'Absolument. Vos données sont chiffrées, hébergées en Europe et conformes au RGPD. Nous n\u2019accédons jamais à vos mots de passe ni à votre historique de navigation.',
     },
     {
-      question: 'Which browsers are supported?',
-      answer: 'Currently Google Chrome (desktop). Firefox and Edge support coming soon.',
+      question: 'Quels navigateurs sont compatibles ?',
+      answer: 'Actuellement Google Chrome (desktop). Le support Firefox et Edge arrive bientôt.',
     },
     {
-      question: 'Is it legal to analyze competitor ads?',
-      answer: 'Yes. FoxAdBox only analyzes publicly visible ads — it\'s like taking notes on an ad you see, but fully automated and AI-powered.',
+      question: 'Est-ce légal d\u2019analyser les pubs des concurrents ?',
+      answer: 'Oui. FoxAdBox analyse uniquement des pubs visibles publiquement — c\u2019est comme prendre des notes sur une pub que vous voyez, mais de manière automatisée et alimentée par l\u2019IA.',
     },
   ]
 
@@ -49,10 +49,10 @@ export default function FAQSection() {
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-medium mb-4 block tracking-wider uppercase">FAQ</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Frequently Asked Questions
+            Questions fréquentes
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Everything you need to know about FoxAdBox.
+            Tout ce que vous devez savoir sur FoxAdBox.
           </p>
         </div>
 

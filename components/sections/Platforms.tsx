@@ -8,7 +8,7 @@ const platforms = [
   { name: 'TikTok' },
   { name: 'YouTube' },
   { name: 'LinkedIn' },
-  { name: 'Any Website' },
+  { name: 'Tout site web' },
 ]
 
 export default function Platforms() {
@@ -22,7 +22,7 @@ export default function Platforms() {
           className="text-center mb-8"
           style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px' }}
         >
-          Works on every platform you already use
+          Compatible avec toutes les plateformes que vous utilisez déjà
         </motion.p>
 
         <motion.div

@@ -13,11 +13,11 @@ export default function CTAFinal() {
 
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Your Competitors Are Running Winning Ads Right Now.
+              Vos concurrents diffusent des pubs gagnantes en ce moment.
             </h2>
 
             <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-              FoxAdBox tells you exactly why they work — and hands you everything you need to do it better.
+              FoxAdBox vous dit exactement pourquoi elles marchent — et vous donne tout ce qu&apos;il faut pour faire mieux.
             </p>
 
             {/* CTA Button */}
@@ -28,18 +28,18 @@ export default function CTAFinal() {
               className="btn-primary text-base px-10 py-4 gap-2 mb-8 animate-glow"
             >
               <Chrome size={20} />
-              Install FoxAdBox for Free →
+              Installer FoxAdBox gratuitement →
             </a>
 
             {/* Reassurance */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <Clock size={16} className="text-accent" />
-                <span>30-second install</span>
+                <span>Installation en 30 secondes</span>
               </div>
               <div className="flex items-center gap-2">
                 <X size={16} className="text-accent" />
-                <span>No credit card required · Cancel anytime</span>
+                <span>Aucune carte bancaire requise · Résiliation à tout moment</span>
               </div>
             </div>
           </div>

@@ -53,7 +53,7 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
           </div>
           <div>
             <div className="text-[11px] font-semibold text-gray-800">NovaSkin</div>
-            <div className="text-[9px] text-gray-400">Sponsored</div>
+            <div className="text-[9px] text-gray-400">Sponsorisé</div>
           </div>
         </div>
 
@@ -103,14 +103,14 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
         {/* Ad text */}
         <div className="px-4 py-3">
           <p className="text-[11px] text-gray-700 leading-relaxed">
-            Your skin deserves better. Try our bestselling Glow Serum — visible results in just 7 days.
+            Votre peau mérite mieux. Essayez notre sérum Glow best-seller — résultats visibles en 7 jours.
           </p>
         </div>
 
         {/* CTA */}
         <div className="px-4 pb-3">
           <div className="w-full py-2 rounded-lg text-center text-[11px] font-semibold text-white" style={{ background: '#1877F2' }}>
-            Shop Now
+            Acheter maintenant
           </div>
         </div>
       </div>

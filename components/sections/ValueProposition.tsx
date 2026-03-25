@@ -8,25 +8,25 @@ const cards = [
     icon: DollarSign,
     title: 'Media Buyers',
     description:
-      'Stop wasting budget on untested creatives. Understand what\'s working in your niche before you spend a single dollar.',
+      'Arrêtez de gaspiller du budget sur des créas non testées. Comprenez ce qui marche dans votre niche avant de dépenser un seul euro.',
   },
   {
     icon: ShoppingCart,
     title: 'E-commerce & Dropshipping',
     description:
-      'Find the ads that are actually selling products right now. Adapt the strategy to your store in minutes, not days.',
+      'Trouvez les pubs qui vendent vraiment des produits en ce moment. Adaptez la stratégie à votre boutique en quelques minutes, pas en plusieurs jours.',
   },
   {
     icon: Video,
-    title: 'UGC Creators & Agencies',
+    title: 'Créateurs UGC & Agences',
     description:
-      'Deliver better briefs, faster. Generate complete scripts and creative directions tailored to each client\'s product.',
+      'Livrez de meilleurs briefs, plus vite. Générez des scripts complets et des directions créatives adaptées au produit de chaque client.',
   },
   {
     icon: Sparkles,
-    title: 'AI Content Creators',
+    title: 'Créateurs de contenu IA',
     description:
-      'Turn competitor ads into Midjourney prompts and AI video prompts. Create scroll-stopping content that\'s already proven to work.',
+      'Transformez les pubs concurrentes en prompts Midjourney et prompts vidéo IA. Créez du contenu qui arrête le scroll et dont l\u2019efficacité est déjà prouvée.',
   },
 ]
 
@@ -42,7 +42,7 @@ export default function ValueProposition() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Built for the People Who Make Ads Work
+            Conçu pour ceux qui font tourner les pubs
           </h2>
         </motion.div>
 

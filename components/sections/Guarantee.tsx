@@ -20,12 +20,12 @@ export default function Guarantee() {
         >
           <span className="text-5xl block mb-5">{'\u{1F6E1}\uFE0F'}</span>
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            14-Day Money-Back Guarantee
+            Garantie satisfait ou remboursé — 14 jours
           </h3>
           <p className="text-gray-400 leading-relaxed mb-6">
-            Try FoxAdBox completely risk-free. If you&apos;re not 100% satisfied
-            within the first 14 days, we&apos;ll refund you immediately — no
-            questions asked, no hoops to jump through.
+            Testez FoxAdBox sans aucun risque. Si vous n&apos;êtes pas 100% satisfait
+            dans les 14 premiers jours, on vous rembourse immédiatement — sans
+            question, sans condition.
           </p>
           <span
             style={{
@@ -37,7 +37,7 @@ export default function Guarantee() {
               display: 'inline-block',
             }}
           >
-            No questions asked · Instant refund · Zero risk
+            Sans question · Remboursement instantané · Zéro risque
           </span>
         </motion.div>
       </div>

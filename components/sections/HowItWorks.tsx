@@ -5,21 +5,21 @@ import { motion } from 'framer-motion'
 const steps = [
   {
     number: '01',
-    title: 'Capture Any Ad',
+    title: 'Capturez n\u2019importe quelle pub',
     description:
-      'See an ad that catches your eye — on Facebook, TikTok, Instagram, YouTube, or any website. Click once to capture it with FoxAdBox.',
+      'Une pub vous tape dans l\u2019\u0153il — sur Facebook, TikTok, Instagram, YouTube ou n\u2019importe quel site. Un clic pour la capturer avec FoxAdBox.',
   },
   {
     number: '02',
-    title: 'AI Decodes Everything',
+    title: 'L\u2019IA décortique tout',
     description:
-      'FoxAdBox analyzes the hook structure, emotional triggers, persuasion techniques, target audience, and every creative decision that makes the ad convert.',
+      'FoxAdBox analyse la structure du hook, les déclencheurs émotionnels, les techniques de persuasion, la cible et chaque choix créatif qui fait convertir la pub.',
   },
   {
     number: '03',
-    title: 'Get Your Creative Assets',
+    title: 'Récupérez vos assets créatifs',
     description:
-      'Receive a Midjourney prompt, an AI video prompt, a complete UGC script, and a full creative brief — all adapted to YOUR product and brand.',
+      'Recevez un prompt Midjourney, un prompt vidéo IA, un script UGC complet et un brief créatif — le tout adapté à VOTRE produit et VOTRE marque.',
   },
 ]
 
@@ -43,7 +43,7 @@ export default function HowItWorks() {
             }}
             className="block mb-6 uppercase"
           >
-            HOW IT WORKS
+            COMMENT ÇA MARCHE
           </motion.span>
 
           <motion.h2
@@ -53,7 +53,7 @@ export default function HowItWorks() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
           >
-            From Any Ad to Ready-to-Use Creative — in Under 2 Minutes
+            De n&apos;importe quelle pub à un créatif prêt à l&apos;emploi — en moins de 2 minutes
           </motion.h2>
 
           <motion.p
@@ -63,8 +63,7 @@ export default function HowItWorks() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-lg max-w-2xl mx-auto"
           >
-            No learning curve. No complex setup. Just install, capture, and let
-            the AI do the work.
+            Zéro courbe d&apos;apprentissage. Zéro configuration. Installez, capturez et laissez l&apos;IA faire le travail.
           </motion.p>
         </div>
 

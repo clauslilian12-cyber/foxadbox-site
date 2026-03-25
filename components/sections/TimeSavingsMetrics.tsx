@@ -5,19 +5,19 @@ import { motion } from 'framer-motion'
 const metrics = [
   {
     value: '90 sec',
-    label: 'From any ad to a ready-to-use Midjourney prompt',
+    label: 'De n\u2019importe quelle pub à un prompt Midjourney prêt à l\u2019emploi',
   },
   {
     value: '2 min',
-    label: 'Full frame-by-frame video ad analysis',
+    label: 'Analyse complète image par image d\u2019une pub vidéo',
   },
   {
     value: '30 sec',
-    label: 'Complete UGC script generated for any product',
+    label: 'Script UGC complet généré pour n\u2019importe quel produit',
   },
   {
     value: '-80%',
-    label: 'Reduction in creative research time reported by our users',
+    label: 'De temps de recherche créative en moins, selon nos utilisateurs',
   },
 ]
 
@@ -45,7 +45,7 @@ export default function TimeSavingsMetrics() {
             }}
             className="block mb-6 uppercase"
           >
-            REAL RESULTS
+            RÉSULTATS CONCRETS
           </motion.span>
 
           <motion.h2
@@ -55,7 +55,7 @@ export default function TimeSavingsMetrics() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white"
           >
-            Stop Spending Hours on What FoxAdBox Does in Seconds
+            Arrêtez de passer des heures sur ce que FoxAdBox fait en quelques secondes
           </motion.h2>
         </div>
 

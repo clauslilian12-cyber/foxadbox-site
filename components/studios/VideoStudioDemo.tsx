@@ -164,7 +164,7 @@ export default function VideoStudioDemo({ isActive }: { isActive: boolean }) {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#7c5cfc' }} />
-              <span className="text-[11px]" style={{ color: '#eef1ff' }}>Hook fort</span>
+              <span className="text-[11px]" style={{ color: '#eef1ff' }}>Hook puissant</span>
             </div>
           </div>
         </div>

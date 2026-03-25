@@ -49,7 +49,7 @@ export default function VideoStudioDemo({ isActive }: { isActive: boolean }) {
         <div className="flex-1">
           {/* Video area */}
           <div className="relative" style={{ aspectRatio: '16/9', background: '#080b1a' }}>
-            <img src="/images/rhode-video.png" alt="Rhode video" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.85 }} />
+            <img src="/images/rhode-video.png" alt="Vidéo Rhode" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.85 }} />
             {/* Dark gradient overlay */}
             <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%)' }} />
             <div className="absolute inset-0 flex items-center justify-center z-10">

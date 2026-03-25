@@ -110,7 +110,7 @@ export default function SpyModeDemo({ isActive }: { isActive: boolean }) {
             }}
           >
             <div style={{ aspectRatio: '1/1', overflow: 'hidden', borderRadius: 8 }}>
-              <img src="/images/rhode.jpg" alt="Competitor ad" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: 8 }} />
+              <img src="/images/rhode.jpg" alt="Pub concurrente" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%', borderRadius: 8 }} />
             </div>
             <div className="px-2.5 py-2">
               <div className="text-[9px] font-semibold text-gray-700">Une peau éclatante en 7 jours</div>

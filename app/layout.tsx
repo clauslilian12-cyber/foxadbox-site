@@ -18,8 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
-      <body className="min-h-screen bg-dark">
+    <html lang="fr" translate="no">
+      <head>
+        <meta name="google" content="notranslate" />
+        <meta httpEquiv="Content-Language" content="fr" />
+      </head>
+      <body className="notranslate min-h-screen bg-dark">
         {children}
       </body>
     </html>

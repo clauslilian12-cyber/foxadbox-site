@@ -213,7 +213,7 @@ export default function FeaturesCarousel() {
               cursor: active === 0 ? 'default' : 'pointer',
             }}
             disabled={active === 0}
-            aria-label="Previous slide"
+            aria-label="Slide précédent"
           >
             &lsaquo;
           </button>
@@ -231,7 +231,7 @@ export default function FeaturesCarousel() {
                   border: i === active ? '2px solid #00e5be' : '2px solid rgba(0,229,190,0.3)',
                   transform: i === active ? 'scale(1.3)' : 'scale(1)',
                 }}
-                aria-label={`Go to slide ${i + 1}`}
+                aria-label={`Aller au slide ${i + 1}`}
               />
             ))}
           </div>
@@ -247,7 +247,7 @@ export default function FeaturesCarousel() {
               cursor: active === slides.length - 1 ? 'default' : 'pointer',
             }}
             disabled={active === slides.length - 1}
-            aria-label="Next slide"
+            aria-label="Slide suivant"
           >
             &rsaquo;
           </button>

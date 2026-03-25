@@ -59,7 +59,7 @@ export default function PhotoStudioDemo({ isActive }: { isActive: boolean }) {
 
         {/* Ad image */}
         <div className="relative" style={{ aspectRatio: '16/10' }}>
-          <img src="/images/rhode.jpg" alt="Rhode ad" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
+          <img src="/images/rhode.jpg" alt="Publicité Rhode" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: 'center 20%' }} />
           {/* Dark overlay */}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 100%)', zIndex: 1 }} />
 

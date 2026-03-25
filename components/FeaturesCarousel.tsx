@@ -57,9 +57,9 @@ const slides: Slide[] = [
   {
     number: '05',
     badge: 'AD TRACKER',
-    title: 'Surveillez vos concurrents en pilote automatique',
-    description: 'Suivez plusieurs concurrents à la fois. Soyez alerté quand ils lancent de nouvelles pubs, changent de créa ou testent de nouveaux hooks.',
-    tags: ['Alertes live', 'Multi-marques', 'Sync auto', 'Veille concurrentielle'],
+    title: 'Comprenez la stratégie pub de vos concurrents',
+    description: 'Analysez les campagnes concurrentes pour identifier les hooks, les créas et les angles qui convertissent. Prenez de meilleures décisions avant de lancer vos pubs.',
+    tags: ['Analyse stratégique', 'Veille publicitaire', 'Détection de hooks', 'Benchmark créatif'],
     highlighted: false,
     Demo: AdTrackerDemo,
   },
